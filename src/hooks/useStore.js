@@ -16,6 +16,7 @@ const useStore = create(set => ({
 		{
 			name: 'Syntax - Tasty Web Development Treats',
 			feed: 'https://feed.syntax.fm/rss',
+			key: nanoid(),
 			episodes: [
 				{
 					title: 'CSS Proposals @when, CSS Masonry, Carets',
@@ -66,7 +67,6 @@ const useStore = create(set => ({
 					length: '00:18:29',
 					key: nanoid(),
 				},
-				{},
 			],
 		},
 	],
