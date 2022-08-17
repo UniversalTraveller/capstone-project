@@ -5,7 +5,7 @@ export default function DisplayEpisodes({episodes}) {
 				<article key={episode.key}>
 					<p>{episode.title}</p>
 					<p>
-						{episode.length} - {episode.date}
+						<span>{episode.length}</span> - <span>{episode.date}</span>
 					</p>
 					<hr />
 				</article>
