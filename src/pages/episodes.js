@@ -15,7 +15,7 @@ export default function Episodes() {
 
 	useEffect(() => {
 		setSelectedEpisodes(selectedPodcast.key);
-	}, []);
+	}, [selectedPodcast]);
 
 	return <DisplayEpisodes episodes={selectedEpisodes} />;
 }
