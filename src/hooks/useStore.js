@@ -13,10 +13,10 @@ const useStore = create(set => ({
 		set(({counter}) => ({counter: counter + step}));
 	},
 	selectedEpisodes: [],
-	setSelectedEpisodes: () =>
+	setSelectedEpisodes: key =>
 		set(state => ({
 			selectedEpisodes: state.podcasts
-				.filter(podcast => podcast.name === 'Syntax - Tasty Web Development Treats')
+				.filter(podcast => podcast.key === key)
 				.map(podcast => podcast.episodes)
 				.flat(),
 		})),
