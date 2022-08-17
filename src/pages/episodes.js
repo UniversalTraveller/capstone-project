@@ -8,7 +8,7 @@ export default function Episodes() {
 	const selectedEpisodes = useStore(state => state.selectedEpisodes);
 	const setSelectedEpisodes = useStore(state => state.setSelectedEpisodes);
 
-	//hardcoded podcast selection, because there are none to coose from yet
+	//hardcoded podcast selection, because there are none to choose from yet
 	const selectedPodcast = podcasts.find(
 		podcast => podcast.name === 'Syntax - Tasty Web Development Treats'
 	);
