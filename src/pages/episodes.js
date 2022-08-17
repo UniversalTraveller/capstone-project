@@ -17,9 +17,5 @@ export default function Episodes() {
 		setSelectedEpisodes(selectedPodcast.key);
 	}, []);
 
-	return (
-		<>
-			<DisplayEpisodes episodes={selectedEpisodes} />
-		</>
-	);
+	return <DisplayEpisodes episodes={selectedEpisodes} />;
 }
