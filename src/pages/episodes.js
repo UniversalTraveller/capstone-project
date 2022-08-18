@@ -1,6 +1,7 @@
 import {useEffect} from 'react';
 
 import DisplayEpisodes from '../components/DisplayEpisodes';
+import Layout from '../components/Layout';
 import useStore from '../hooks/useStore';
 
 export default function Episodes() {
@@ -17,5 +18,9 @@ export default function Episodes() {
 		setSelectedEpisodes(selectedPodcast.key);
 	}, [selectedPodcast]);
 
-	return <DisplayEpisodes episodes={selectedEpisodes} />;
+	return (
+		<Layout>
+			<DisplayEpisodes episodes={selectedEpisodes} />
+		</Layout>
+	);
 }
