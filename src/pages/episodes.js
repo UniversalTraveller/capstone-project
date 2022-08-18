@@ -16,7 +16,7 @@ export default function Episodes() {
 
 	useEffect(() => {
 		setSelectedEpisodes(selectedPodcast.key);
-	}, [selectedPodcast]);
+	}, [selectedPodcast, setSelectedEpisodes]); //setSelectedEpisodes in in the dependency array to calm eslint
 
 	return (
 		<Layout>
