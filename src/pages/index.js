@@ -1,8 +1,11 @@
 import Head from 'next/head';
 
+import DisplayPodcasts from '../components/DisplayPodcasts';
 import Layout from '../components/Layout';
+import useStore from '../hooks/useStore';
 
 export default function HomePage() {
+	const podcasts = useStore(state => state.podcasts);
 	return (
 		<Layout>
 			<Head>
@@ -13,6 +16,7 @@ export default function HomePage() {
 					content="This app allows you to play podcasts."
 				/>
 			</Head>
+			<DisplayPodcasts podcasts={podcasts} />
 		</Layout>
 	);
 }

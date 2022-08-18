@@ -4,8 +4,13 @@ export default function Header() {
 	return (
 		<header>
 			<nav>
-				<Link href="/">Home</Link>
-				<Link href="/episodes">Episodes</Link>
+				<Link href="/">
+					<a>Podcasts</a>
+				</Link>{' '}
+				-
+				<Link href="/episodes">
+					<a> Episodes</a>
+				</Link>
 			</nav>
 		</header>
 	);

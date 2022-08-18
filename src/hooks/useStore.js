@@ -1,19 +1,11 @@
 import {nanoid} from 'nanoid';
 import create from 'zustand';
 
-const useStore = create(set => ({
-	selectedEpisodes: [],
-	setSelectedEpisodes: key =>
-		set(state => ({
-			selectedEpisodes: state.podcasts
-				.filter(podcast => podcast.key === key)
-				.map(podcast => podcast.episodes)
-				.flat(),
-		})),
-
+const useStore = create(() => ({
 	podcasts: [
 		{
-			name: 'Syntax - Tasty Web Development Treats',
+			title: 'Syntax - Tasty Web Development Treats',
+			author: 'Wes Bos & Scott Tolinski',
 			feed: 'https://feed.syntax.fm/rss',
 			key: nanoid(),
 			episodes: [
