@@ -12,7 +12,8 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	body {
-		margin: 0;
+		margin: 2rem;
 		font-size: 1rem;
 	}
+
 `;
