@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const NavigationLink = styled.a`
 	margin-right: 1rem;
-	padding: 0.2rem;
+	padding: 0.3rem;
 	border: 0.1rem solid;
 	border-radius: 0.3rem;
 	&&:hover {
