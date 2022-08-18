@@ -1,15 +1,16 @@
 import Link from 'next/link';
 
+import {NavigationLink} from './NavigatonLink/styled';
+
 export default function Header() {
 	return (
 		<header>
 			<nav>
 				<Link href="/">
-					<a>Podcasts</a>
-				</Link>{' '}
-				-
+					<NavigationLink>Podcasts</NavigationLink>
+				</Link>
 				<Link href="/episodes">
-					<a> Episodes</a>
+					<NavigationLink> Episodes</NavigationLink>
 				</Link>
 			</nav>
 		</header>
