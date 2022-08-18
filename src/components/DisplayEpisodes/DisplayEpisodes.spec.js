@@ -8,7 +8,7 @@ import {nanoid} from 'nanoid';
 import DisplayEpisodes from './';
 
 describe('DisplayEpisodes component', () => {
-	it('should display the episodes name', () => {
+	it('should display the episodes title, date and length', () => {
 		const episodes = {
 			title: 'CSS Proposals @when, CSS Masonry, Carets',
 			url: 'https://traffic.libsyn.com/syntax/Syntax_-_497.mp3',
