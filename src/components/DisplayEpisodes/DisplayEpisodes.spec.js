@@ -17,9 +17,9 @@ describe('DisplayEpisodes component', () => {
 			key: nanoid(),
 		};
 
-		// The component expects an array as props.
-		const episodesProps = [episodes];
-		render(<DisplayEpisodes episodes={episodesProps} />);
+		// The component expects an array as prop.
+		const episodesProp = [episodes];
+		render(<DisplayEpisodes episodes={episodesProp} />);
 
 		const episodeTitle = screen.getByText(episodes.title);
 		expect(episodeTitle).toBeInTheDocument();
