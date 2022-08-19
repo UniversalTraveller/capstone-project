@@ -1,3 +1,4 @@
+import Player from '../components/Player';
 import {GlobalStyle} from '../styles';
 
 export default function App({Component, pageProps}) {
@@ -5,6 +6,7 @@ export default function App({Component, pageProps}) {
 		<>
 			<GlobalStyle />
 			<Component {...pageProps} />
+			<Player />
 		</>
 	);
 }

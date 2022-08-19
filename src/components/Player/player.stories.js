@@ -1,4 +1,4 @@
-import Player from './';
+import Player from '.';
 
 function Template() {
 	return <Player />;

@@ -1,6 +1,5 @@
 import DisplayEpisodes from '../components/DisplayEpisodes';
 import Layout from '../components/Layout';
-import Player from '../components/Player';
 import useStore from '../hooks/useStore';
 
 export default function Episodes() {
@@ -12,7 +11,6 @@ export default function Episodes() {
 	return (
 		<Layout>
 			<DisplayEpisodes episodes={selectedEpisodes} />
-			<Player />
 		</Layout>
 	);
 }
