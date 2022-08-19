@@ -1,7 +1,11 @@
 import {nanoid} from 'nanoid';
 import create from 'zustand';
 
-const useStore = create(() => ({
+const useStore = create(set => ({
+	selectedPodcast: {},
+	selectedEpisode: {},
+	setSelectedPodcast: podcast => set({selectedPodcast: podcast}),
+	setSelectedEpisode: episode => set({selectedEpisode: episode}),
 	podcasts: [
 		{
 			title: 'Syntax - Tasty Web Development Treats',
@@ -22,6 +26,7 @@ const useStore = create(() => ({
 					date: '12.08.2022',
 					length: '00:51:43',
 					key: nanoid(),
+					selected: false,
 				},
 				{
 					title: 'Potluck - API Fetching × PDF Creation × tRPC × Stripe vs PayPal',

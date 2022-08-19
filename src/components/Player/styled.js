@@ -15,9 +15,13 @@ export const PlayerOverlay = styled.article`
 `;
 
 export const AudioPlayer = styled.audio`
-	width: 100%;
-	background-color: #fff;
+	position: absolute;
+	bottom: 2rem;
+	left: 2rem;
+	right: auto;
+	width: 85%;
 	border-radius: 0.5rem;
+	background-color: #fff;
 `;
 
 export const PlayerTitle = styled.h2`
