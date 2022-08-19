@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 import DisplayPodcasts from '../components/DisplayPodcasts';
 import Layout from '../components/Layout';
+import Player from '../components/Player';
 import useStore from '../hooks/useStore';
 
 export default function HomePage() {
@@ -17,6 +18,7 @@ export default function HomePage() {
 				/>
 			</Head>
 			<DisplayPodcasts podcasts={podcasts} />
+			<Player />
 		</Layout>
 	);
 }
