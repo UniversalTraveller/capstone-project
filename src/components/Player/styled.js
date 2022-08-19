@@ -14,16 +14,6 @@ export const PlayerOverlay = styled.article`
 	gap: 0.3rem;
 `;
 
-export const AudioPlayer = styled.audio`
-	position: absolute;
-	bottom: 2rem;
-	left: 2rem;
-	right: auto;
-	width: 85%;
-	border-radius: 0.5rem;
-	background-color: #fff;
-`;
-
 export const PlayerTitle = styled.h2`
 	display: inline;
 	font-size: 1.4rem;

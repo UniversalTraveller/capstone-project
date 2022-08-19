@@ -1,6 +1,8 @@
+import ReactAudioPlayer from 'react-audio-player';
+
 import useStore from '../../hooks/useStore';
 
-import {PlayerOverlay, AudioPlayer, PlayerTitle, PlayerDate} from './styled';
+import {PlayerOverlay, PlayerTitle, PlayerDate} from './styled';
 
 export default function Player() {
 	const selectedPodcast = useStore(state => state.selectedPodcast);
@@ -14,10 +16,7 @@ export default function Player() {
 			</div>
 			<p>{selectedPodcast.title ? selectedPodcast.title : 'empty'}</p>
 			<p>{selectedPodcast.author ? selectedPodcast.author : 'empty'}</p>
-			<AudioPlayer controls>
-				<source src={selectedEpisode.url ? selectedEpisode.url : ''} />
-				Your browser does not support the <code>audio</code> element.
-			</AudioPlayer>
+			<ReactAudioPlayer controls src={selectedEpisode.url ? selectedEpisode.url : ''} />
 		</PlayerOverlay>
 	);
 }
