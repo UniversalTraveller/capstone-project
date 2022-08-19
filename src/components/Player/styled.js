@@ -7,5 +7,6 @@ export const PlayerOverlay = styled.article`
 	width: 100%;
 	height: 20%;
 	min-height: 12rem;
-	background-color: red;
+	background-color: #777777;
+	padding: 2rem;
 `;
