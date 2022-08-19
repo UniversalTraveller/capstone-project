@@ -9,10 +9,23 @@ export const PlayerOverlay = styled.article`
 	min-height: 12rem;
 	background-color: #777;
 	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
 `;
 
 export const AudioPlayer = styled.audio`
 	width: 100%;
 	background-color: #fff;
 	border-radius: 0.5rem;
+`;
+
+export const PlayerTitle = styled.h2`
+	display: inline;
+	font-size: 1.4rem;
+`;
+
+export const PlayerDate = styled.p`
+	display: inline;
+	font-size: 1.4rem;
 `;

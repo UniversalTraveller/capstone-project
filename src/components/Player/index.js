@@ -1,10 +1,12 @@
-import {PlayerOverlay, AudioPlayer} from './styled';
+import {PlayerOverlay, AudioPlayer, PlayerTitle, PlayerDate} from './styled';
 
 export default function Player() {
 	return (
 		<PlayerOverlay>
-			<h2>CSS Proposals @when, CSS Masonry, Carets</h2>
-			<p>5.08.2022</p>
+			<div>
+				<PlayerTitle>CSS Proposals @when, CSS Masonry, Carets</PlayerTitle> -
+				<PlayerDate> 05.08.2022</PlayerDate>
+			</div>
 			<p>Syntax - Tasty Web Development Treats </p>
 			<p>Wes Bos & Scott Tolinski</p>
 			<AudioPlayer controls>
