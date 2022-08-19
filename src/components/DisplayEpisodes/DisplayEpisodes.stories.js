@@ -12,9 +12,7 @@ Default.args = {
 	episodes: [
 		{
 			title: 'CSS Proposals @when, CSS Masonry, Carets',
-			url: 'https://traffic.libsyn.com/syntax/Syntax_-_497.mp3',
-			date: '15.08.2022',
-			length: '00:20:11',
+			author: 'Wes Bos & Scott Tolinski',
 			key: nanoid(),
 		},
 	],

@@ -14,12 +14,14 @@ export default function Player() {
 				<PlayerTitle>
 					{selectedEpisode.title
 						? selectedEpisode.title + ' - '
-						: 'Click on an episode to play!'}
+						: 'Click on an episode to play! - '}
 				</PlayerTitle>
-				<PlayerDate>{selectedEpisode.date ? selectedEpisode.date : ''}</PlayerDate>
+				<PlayerDate>
+					{selectedEpisode.date ? selectedEpisode.date : '00.00.0000'}
+				</PlayerDate>
 			</div>
-			<p>{selectedPodcast.title ? selectedPodcast.title : ''}</p>
-			<p>{selectedPodcast.author ? selectedPodcast.author : ''}</p>
+			<p>{selectedPodcast.title ? selectedPodcast.title : 'No title'}</p>
+			<p>{selectedPodcast.author ? selectedPodcast.author : 'No author'}</p>
 			<ReactAudioPlayer controls src={selectedEpisode.url ? selectedEpisode.url : ''} />
 		</PlayerOverlay>
 	);
