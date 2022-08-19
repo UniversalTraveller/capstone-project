@@ -11,11 +11,15 @@ export default function Player() {
 	return (
 		<PlayerOverlay>
 			<div>
-				<PlayerTitle>{selectedEpisode.title ? selectedEpisode.title : 'empty'}</PlayerTitle>{' '}
-				- <PlayerDate>{selectedEpisode.date ? selectedEpisode.date : 'empty'}</PlayerDate>
+				<PlayerTitle>
+					{selectedEpisode.title
+						? selectedEpisode.title + ' - '
+						: 'Click on an episode to play!'}
+				</PlayerTitle>
+				<PlayerDate>{selectedEpisode.date ? selectedEpisode.date : ''}</PlayerDate>
 			</div>
-			<p>{selectedPodcast.title ? selectedPodcast.title : 'empty'}</p>
-			<p>{selectedPodcast.author ? selectedPodcast.author : 'empty'}</p>
+			<p>{selectedPodcast.title ? selectedPodcast.title : ''}</p>
+			<p>{selectedPodcast.author ? selectedPodcast.author : ''}</p>
 			<ReactAudioPlayer controls src={selectedEpisode.url ? selectedEpisode.url : ''} />
 		</PlayerOverlay>
 	);
