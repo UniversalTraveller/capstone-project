@@ -15,7 +15,12 @@ export default function DisplayEpisodes({episodes}) {
 	return (
 		<>
 			{episodes.map(episode => (
-				<EpisodeCard key={episode.key} onClick={() => handleClick(episode)}>
+				<EpisodeCard
+					key={episode.key}
+					onClick={() => handleClick(episode)}
+					name={episode.title}
+					type="button"
+				>
 					<p>{episode.title}</p>
 					<p>
 						<span>{episode.length}</span> - <span>{episode.date}</span>
