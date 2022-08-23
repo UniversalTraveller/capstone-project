@@ -12,10 +12,9 @@ export default function Player() {
 		<PlayerOverlay>
 			<div>
 				<PlayerTitle>
-					{selectedEpisode.title
-						? selectedEpisode.title + ' - '
-						: 'Click on an episode to play! - '}
+					{selectedEpisode.title ? selectedEpisode.title : 'Click on an episode to play!'}
 				</PlayerTitle>
+				<span> - </span>
 				<PlayerDate>
 					{selectedEpisode.date ? selectedEpisode.date : '00.00.0000'}
 				</PlayerDate>
