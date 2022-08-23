@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 export const PlayerOverlay = styled.article`
+	display: flex;
 	position: fixed;
 	bottom: 0;
 	left: 0;
+	flex-direction: column;
 	width: 100%;
 	height: 20%;
 	min-height: 12rem;
-	background-color: #777;
 	padding: 2rem;
-	display: flex;
-	flex-direction: column;
 	gap: 0.3rem;
+	background-color: #777;
 `;
 
 export const PlayerTitle = styled.h2`
