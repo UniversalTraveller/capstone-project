@@ -33,7 +33,9 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+	margin: 2rem;
 	line-height: 1;
+
 }
 ol, ul {
 	list-style: none;
@@ -60,10 +62,6 @@ table {
 
 html {
 	font-size: 16px;
-}
-
-body {
-	margin: 2rem;
 }
 
 `;
