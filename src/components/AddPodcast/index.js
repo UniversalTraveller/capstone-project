@@ -1,5 +1,14 @@
+import {useRouter} from 'next/router';
+
 import {AddPodcastForm, AddPodcastFormRow, NotificationArea} from './styled';
+
 export default function AddPodcast() {
+	const router = useRouter();
+
+	function handleCancel() {
+		router.push('/');
+	}
+
 	return (
 		<NotificationArea background-color="red">
 			<AddPodcastForm>
@@ -14,7 +23,9 @@ export default function AddPodcast() {
 				></input>
 				<AddPodcastFormRow>
 					<button type="submit">Submit</button>
-					<button type="button">Cancel</button>
+					<button type="button" onClick={handleCancel}>
+						Cancel
+					</button>
 				</AddPodcastFormRow>
 			</AddPodcastForm>
 		</NotificationArea>
