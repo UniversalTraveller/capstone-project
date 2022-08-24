@@ -10,10 +10,10 @@ export default function Header() {
 					<NavigationLink>Podcasts</NavigationLink>
 				</Link>
 				<Link href="/episodes">
-					<NavigationLink> Episodes</NavigationLink>
+					<NavigationLink>Episodes</NavigationLink>
 				</Link>
 				<Link href="/add-podcast">
-					<NavigationLink> Add</NavigationLink>
+					<NavigationLink>Add</NavigationLink>
 				</Link>
 			</nav>
 		</header>
