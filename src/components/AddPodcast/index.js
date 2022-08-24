@@ -35,7 +35,9 @@ export default function AddPodcast() {
 		const items = feed.querySelectorAll('item');
 		const feedItems = [...items].map(episode => ({
 			title: episode.querySelector('title') ? episode.querySelector('title').innerHTML : '',
-			url: episode.querySelector('link') ? episode.querySelector('link').innerHTML : '',
+			url: episode.querySelector('enclosure')
+				? episode.querySelector('enclosure').getAttribute('url')
+				: '',
 			date: episode.querySelector('pubDate')
 				? episode.querySelector('pubDate').innerHTML
 				: '',

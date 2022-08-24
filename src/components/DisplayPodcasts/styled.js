@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const PodcastCard = styled.article`
+export const PodcastCard = styled.button`
 	max-width: 640px;
 	margin: 1rem 0;
 	padding: 0.3rem;

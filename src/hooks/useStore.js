@@ -63,8 +63,10 @@ const defaultPodcast = {
 const useStore = create(set => ({
 	selectedPodcast: defaultPodcast,
 	selectedEpisode: defaultPodcast.episodes[0],
+	selectedEpisodes: defaultPodcast.episodes,
 	setSelectedPodcast: podcast => set({selectedPodcast: podcast}),
 	setSelectedEpisode: episode => set({selectedEpisode: episode}),
+	setSelectedEpisodes: episodes => set({selectedEpisodes: episodes}),
 	podcasts: [defaultPodcast],
 	addPodcast: podcast => {
 		set(state => ({podcasts: [...state.podcasts, podcast]}));
