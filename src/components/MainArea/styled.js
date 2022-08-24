@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-export const MainArea = styled.main`
+export const MainArea = styled.div`
 	margin-bottom: 14rem;
 `;
