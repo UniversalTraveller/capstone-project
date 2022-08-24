@@ -5,8 +5,9 @@ import useStore from '../../hooks/useStore';
 import {PlayerOverlay, PlayerTitle, PlayerDate} from './styled';
 
 export default function Player() {
-	const selectedPodcast = useStore(state => state.selectedPodcast);
+	const podcasts = useStore(state => state.podcasts);
 	const selectedEpisode = useStore(state => state.selectedEpisode);
+	const selectedPodcast = podcasts.find(podcast => podcast.episodes.includes(selectedEpisode));
 
 	return (
 		<PlayerOverlay>
