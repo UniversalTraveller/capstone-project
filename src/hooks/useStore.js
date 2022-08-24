@@ -65,6 +65,8 @@ const useStore = create(set => ({
 	selectedEpisode: defaultPodcast.episodes[0],
 	setSelectedPodcast: podcast => set({selectedPodcast: podcast}),
 	setSelectedEpisode: episode => set({selectedEpisode: episode}),
+	playerVolume: 0.5,
+	setPlayerVolume: volume => set({playerVolume: volume}),
 	podcasts: [defaultPodcast],
 }));
 
