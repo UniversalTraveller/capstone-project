@@ -1,3 +1,8 @@
+import {NotificationArea} from './styled';
 export default function AddPodcast() {
-	return <h1>Add Podcast</h1>;
+	return (
+		<NotificationArea background-color="red">
+			<h1>Add Podcast</h1>
+		</NotificationArea>
+	);
 }

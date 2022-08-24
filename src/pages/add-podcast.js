@@ -8,17 +8,20 @@ import useStore from '../hooks/useStore';
 export default function AddPodcastPage() {
 	const podcasts = useStore(state => state.podcasts);
 	return (
-		<Layout>
-			<Head>
-				<title key="title">Podcast Player - Add Podcast</title>
-				<meta
-					key="description"
-					name="description"
-					content="This app allows you to play podcasts."
-				/>
-			</Head>
+		<>
 			<AddPodcast></AddPodcast>
-			<DisplayPodcasts podcasts={podcasts} />
-		</Layout>
+			<Layout>
+				<Head>
+					<title key="title">Podcast Player - Add Podcast</title>
+					<meta
+						key="description"
+						name="description"
+						content="This app allows you to play podcasts."
+					/>
+				</Head>
+
+				<DisplayPodcasts podcasts={podcasts} />
+			</Layout>
+		</>
 	);
 }

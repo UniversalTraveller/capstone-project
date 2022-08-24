@@ -1,10 +1,12 @@
 import Link from 'next/link';
 
-import {NavigationLink} from './NavigatonLink/styled';
+import {NavigationLink} from '../NavigatonLink/styled';
+
+import {HeaderBar} from './styled';
 
 export default function Header() {
 	return (
-		<header>
+		<HeaderBar>
 			<nav>
 				<Link href="/">
 					<NavigationLink>Podcasts</NavigationLink>
@@ -16,6 +18,6 @@ export default function Header() {
 					<NavigationLink>Add</NavigationLink>
 				</Link>
 			</nav>
-		</header>
+		</HeaderBar>
 	);
 }
