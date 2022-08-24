@@ -1,45 +1,61 @@
 import {useRouter} from 'next/router';
 import {useState} from 'react';
 
-import {AddPodcastForm, AddPodcastFormRow, AddPodcastNotificaton, NotificationArea} from './styled';
+import {AddPodcastForm, ButtonRow, AddPodcastNotificaton, NotificationArea} from './styled';
 
 export default function AddPodcast() {
 	const router = useRouter();
 	const [message, setMessage] = useState('form');
 
-	function handleCancel() {
+	function handleCancel(event) {
+		event.preventDefault();
 		router.push('/');
 	}
 
-	function handleSubmit() {
+	function handleSubmit(event) {
+		event.preventDefault();
+		const rssUrl = event.target.feedUrl.value;
+		//check whether input is valid
+		const urlRegex =
+			/(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?/;
+		if (!urlRegex.test(rssUrl)) {
+			handleError();
+			return;
+		}
+
 		setMessage('success');
+
+		console.log(rssUrl);
 	}
 
-	function handleConfirmation() {
+	function handleConfirmation(event) {
+		event.preventDefault();
 		router.push('/');
+	}
+
+	function handleError() {
+		setMessage('error');
 	}
 
 	return (
 		<NotificationArea>
 			{message === 'form' ? (
-				<AddPodcastForm>
-					<label htmlFor="feedURL">
+				<AddPodcastForm onSubmit={handleSubmit}>
+					<label htmlFor="feedUrl">
 						Please enter the feed URL of a podcast you want to add:
 					</label>
 					<input
 						type="text"
-						name="feedURL"
-						id="feedURL"
+						name="feedUrl"
+						id="feedUrl"
 						placeholder="https//podcast.com/feed.rss"
 					></input>
-					<AddPodcastFormRow>
-						<button type="submit" onClick={handleSubmit}>
-							Submit
-						</button>
+					<ButtonRow>
+						<button type="submit">Submit</button>
 						<button type="button" onClick={handleCancel}>
 							Cancel
 						</button>
-					</AddPodcastFormRow>
+					</ButtonRow>
 				</AddPodcastForm>
 			) : (
 				''
@@ -47,11 +63,26 @@ export default function AddPodcast() {
 			{message === 'success' ? (
 				<AddPodcastNotificaton>
 					<p>Added new Podcast.</p>
-					<p>
+					<ButtonRow>
 						<button type="button" onClick={handleConfirmation}>
 							Okay, cool!
 						</button>
-					</p>
+					</ButtonRow>
+				</AddPodcastNotificaton>
+			) : (
+				''
+			)}
+			{message === 'error' ? (
+				<AddPodcastNotificaton>
+					<p>Oh no!</p>
+					<ButtonRow>
+						<button type="button" onClick={() => setMessage('form')}>
+							Okay
+						</button>
+						<button type="button" onClick={handleCancel}>
+							Cancel
+						</button>
+					</ButtonRow>
 				</AddPodcastNotificaton>
 			) : (
 				''

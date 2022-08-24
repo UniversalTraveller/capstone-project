@@ -11,13 +11,13 @@ export const AddPodcastForm = styled.form`
 	gap: 0.5rem;
 `;
 
-export const AddPodcastFormRow = styled.div`
+export const ButtonRow = styled.div`
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
 `;
 
-export const AddPodcastNotificaton = styled.p`
+export const AddPodcastNotificaton = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
