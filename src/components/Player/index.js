@@ -7,6 +7,13 @@ import {PlayerOverlay, PlayerTitle, PlayerDate} from './styled';
 export default function Player() {
 	const selectedPodcast = useStore(state => state.selectedPodcast);
 	const selectedEpisode = useStore(state => state.selectedEpisode);
+	const playerVolume = useStore(state => state.playerVolume);
+	const setPlayerVolume = useStore(state => state.setPlayerVolume);
+
+	function handleVolumeChange(event) {
+		const volume = event.srcElement.volume;
+		setPlayerVolume(volume);
+	}
 
 	return (
 		<PlayerOverlay>
@@ -21,7 +28,12 @@ export default function Player() {
 			</div>
 			<p>{selectedPodcast.title ? selectedPodcast.title : 'No title'}</p>
 			<p>{selectedPodcast.author ? selectedPodcast.author : 'No author'}</p>
-			<ReactAudioPlayer controls src={selectedEpisode.url ? selectedEpisode.url : ''} />
+			<ReactAudioPlayer
+				controls
+				src={selectedEpisode.url ? selectedEpisode.url : ''}
+				onVolumeChanged={handleVolumeChange}
+				volume={playerVolume}
+			/>
 		</PlayerOverlay>
 	);
 }
