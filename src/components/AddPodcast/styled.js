@@ -16,3 +16,9 @@ export const AddPodcastFormRow = styled.div`
 	flex-direction: row;
 	gap: 0.5rem;
 `;
+
+export const AddPodcastNotificaton = styled.p`
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+`;
