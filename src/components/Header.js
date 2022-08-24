@@ -12,6 +12,9 @@ export default function Header() {
 				<Link href="/episodes">
 					<NavigationLink> Episodes</NavigationLink>
 				</Link>
+				<Link href="/add-podcast">
+					<NavigationLink> Add</NavigationLink>
+				</Link>
 			</nav>
 		</header>
 	);
