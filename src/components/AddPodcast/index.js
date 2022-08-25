@@ -12,8 +12,8 @@ export default function AddPodcast() {
 	const [addedPodcastTitle, setAddedPodcastTitle] = useState('');
 	const {addPodcast} = useStore();
 
-	function handleCancel(event) {
-		
+	function handleCancel() {
+
 		router.push('/');
 	}
 
@@ -40,8 +40,8 @@ export default function AddPodcast() {
 		setMessage('success');
 	}
 
-	function handleConfirmation(event) {
-		
+	function handleConfirmation() {
+	
 		router.push('/');
 	}
 
