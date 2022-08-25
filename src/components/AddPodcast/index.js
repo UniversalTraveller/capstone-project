@@ -41,7 +41,7 @@ export default function AddPodcast() {
 	}
 
 	function handleConfirmation(event) {
-		event.preventDefault();
+		
 		router.push('/');
 	}
 
