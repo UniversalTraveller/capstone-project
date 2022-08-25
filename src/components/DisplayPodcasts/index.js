@@ -10,7 +10,6 @@ export default function DisplayPodcasts({podcasts}) {
 	const router = useRouter();
 
 	function handleClick(podcast) {
-		console.log(podcast);
 		setSelectedEpisodes(podcast.episodes);
 		router.push('/episodes');
 	}
