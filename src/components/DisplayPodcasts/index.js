@@ -1,7 +1,7 @@
 import {useRouter} from 'next/router';
 
 import useStore from '../../hooks/useStore';
-import decodeHtml from '../utils/decodeHtml';
+import decodeHtml from '../../utils/decodeHtml';
 
 import {PodcastCard} from './styled';
 

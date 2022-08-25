@@ -1,6 +1,6 @@
 import useStore from '../../hooks/useStore';
-import decodeHtml from '../utils/decodeHtml';
-import renderDate from '../utils/renderDate';
+import decodeHtml from '../../utils/decodeHtml';
+import renderDate from '../../utils/renderDate';
 
 import {EpisodeCard} from './styled';
 

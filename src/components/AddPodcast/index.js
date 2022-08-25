@@ -2,7 +2,7 @@ import {useRouter} from 'next/router';
 import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
-import loadPodcastFeed from '../utils/loadPodcastFeed';
+import loadPodcastFeed from '../../utils/loadPodcastFeed';
 
 import {AddPodcastForm, ButtonRow, AddPodcastNotificaton, NotificationArea} from './styled';
 
@@ -28,12 +28,8 @@ export default function AddPodcast() {
 			return;
 		}
 
-		//load podcast feed from provided url
-		const feedChannel = await loadPodcastFeed(rssUrl);
-
-		//add podcast to store
-		addPodcast(feedChannel);
-
+		const feedChannel = await loadPodcastFeed(rssUrl); //load podcast feed from provided url
+		addPodcast(feedChannel); //add podcast to store
 		setMessage('success');
 	}
 

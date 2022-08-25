@@ -1,8 +1,8 @@
 import ReactAudioPlayer from 'react-audio-player';
 
 import useStore from '../../hooks/useStore';
-import decodeHtml from '../utils/decodeHtml';
-import renderDate from '../utils/renderDate';
+import decodeHtml from '../../utils/decodeHtml';
+import renderDate from '../../utils/renderDate';
 
 import {PlayerOverlay, PlayerTitle, PlayerDate} from './styled';
 
