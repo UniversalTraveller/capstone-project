@@ -13,7 +13,6 @@ export default function AddPodcast() {
 	const {addPodcast} = useStore();
 
 	function handleCancel() {
-
 		router.push('/');
 	}
 
@@ -41,7 +40,6 @@ export default function AddPodcast() {
 	}
 
 	function handleConfirmation() {
-	
 		router.push('/');
 	}
 
