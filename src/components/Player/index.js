@@ -19,6 +19,13 @@ export default function Player() {
 
 	function trimString(string, length) {
 		return string.length > length ? string.substring(0, length) + '...' : string;
+
+	const playerVolume = useStore(state => state.playerVolume);
+	const setPlayerVolume = useStore(state => state.setPlayerVolume);
+
+	function handleVolumeChange(event) {
+		const volume = event.srcElement.volume;
+		setPlayerVolume(volume);
 	}
 
 	return (
@@ -32,7 +39,12 @@ export default function Player() {
 			</div>
 			<p>{podcastTitle ? podcastTitle : 'No title'}</p>
 			<p>{podcastAuthor ? podcastAuthor : 'No author'}</p>
-			<ReactAudioPlayer controls src={selectedEpisode.url ? selectedEpisode.url : ''} />
+			<ReactAudioPlayer
+				controls
+				src={selectedEpisode.url ? selectedEpisode.url : ''}
+				onVolumeChanged={handleVolumeChange}
+				volume={playerVolume}
+			/>
 		</PlayerOverlay>
 	);
 }
