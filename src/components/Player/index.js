@@ -11,8 +11,9 @@ export default function Player() {
 	const selectedEpisode = useStore(state => state.selectedEpisode);
 	const selectedPodcast = podcasts.find(podcast => podcast.episodes.includes(selectedEpisode));
 
-	const podcastTitle = trimString(decodeHtml(selectedPodcast.title), 50);
-	const podcastAuthor = trimString(decodeHtml(selectedPodcast.author), 50);
+	//prepare output
+	const podcastTitle = trimString(decodeHtml(selectedPodcast.title), 60);
+	const podcastAuthor = trimString(decodeHtml(selectedPodcast.author), 60);
 	const episodeTitle = trimString(decodeHtml(selectedEpisode.title), 72);
 	const date = renderDate(selectedEpisode.date);
 

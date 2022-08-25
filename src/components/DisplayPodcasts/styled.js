@@ -11,6 +11,7 @@ export const PodcastCard = styled.button`
 	border: 0.1rem solid;
 	border-radius: 0.3rem;
 	background-color: #fff;
+	text-align: left;
 	gap: 0.4rem;
 	&&:hover {
 		background-color: #f5f5f5;
