@@ -8,6 +8,12 @@ export default async function loadPodcastFeed(rssUrl) {
 
 	//iterate over all episodes
 	const items = feed.querySelectorAll('item');
+
+	//return an empty object if no episodes are found
+	if (!items.length) {
+		return {};
+	}
+
 	const feedItems = [...items].map(episode => ({
 		title: episode.querySelector('title') ? episode.querySelector('title').innerHTML : '',
 		url: episode.querySelector('enclosure')
@@ -30,6 +36,11 @@ export default async function loadPodcastFeed(rssUrl) {
 		key: nanoid(),
 		episodes: feedItems ? feedItems : [],
 	};
+
+	//return an object when no proper podcast feed is found
+	if (!feedChannel.length) {
+		return {};
+	}
 
 	return feedChannel;
 }

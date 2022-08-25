@@ -30,6 +30,11 @@ export default function AddPodcast() {
 		}
 
 		const feedChannel = await loadPodcastFeed(rssUrl); //load podcast feed from provided url
+		if (!feedChannel.title) {
+			setMessage('error');
+			return;
+		}
+
 		addPodcast(feedChannel); //add podcast to store
 		setAddedPodcastTitle(feedChannel.title); //set added podcast title for notification
 		setMessage('success');
