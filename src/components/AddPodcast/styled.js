@@ -14,7 +14,6 @@ export const AddPodcastForm = styled.form`
 
 export const ButtonRow = styled.div`
 	display: flex;
-	flex-direction: row;
 	gap: 0.5rem;
 `;
 
