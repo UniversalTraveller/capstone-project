@@ -17,10 +17,10 @@ export default function DisplayPodcasts({podcasts}) {
 		<>
 			{podcasts.map(podcast => (
 				<PodcastCard key={podcast.key} onClick={() => handleClick(podcast)}>
-					<span>
+					<p>
 						<a>{podcast.title}</a>
-					</span>{' '}
-					- <span>{podcast.author}</span>
+					</p>
+					<p>{podcast.author}</p>
 				</PodcastCard>
 			))}
 		</>
