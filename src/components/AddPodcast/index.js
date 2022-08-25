@@ -57,7 +57,7 @@ export default function AddPodcast() {
 						name="feedUrl"
 						id="feedUrl"
 						placeholder="https//podcast.com/feed.rss"
-					>
+					/>
 					<ButtonRow>
 						<button type="submit">Submit</button>
 						<button type="button" onClick={handleCancel}>
