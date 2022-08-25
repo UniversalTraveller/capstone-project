@@ -1,6 +1,7 @@
 import ReactAudioPlayer from 'react-audio-player';
 
 import useStore from '../../hooks/useStore';
+import decodeHtml from '../utils/decodeHtml';
 import renderDate from '../utils/renderDate';
 
 import {PlayerOverlay, PlayerTitle, PlayerDate} from './styled';
@@ -10,19 +11,26 @@ export default function Player() {
 	const selectedEpisode = useStore(state => state.selectedEpisode);
 	const selectedPodcast = podcasts.find(podcast => podcast.episodes.includes(selectedEpisode));
 
+	const podcastTitle = trimString(decodeHtml(selectedPodcast.title), 50);
+	const podcastAuthor = trimString(decodeHtml(selectedPodcast.author), 50);
+	const episodeTitle = trimString(decodeHtml(selectedEpisode.title), 72);
+	const date = renderDate(selectedEpisode.date);
+
+	function trimString(string, length) {
+		return string.length > length ? string.substring(0, length) + '...' : string;
+	}
+
 	return (
 		<PlayerOverlay>
 			<div>
 				<PlayerTitle>
-					{selectedEpisode.title ? selectedEpisode.title : 'Click on an episode to play!'}
+					{episodeTitle ? episodeTitle : 'Click on an episode to play!'}
 				</PlayerTitle>
 				<span> - </span>
-				<PlayerDate>
-					{selectedEpisode.date ? renderDate(selectedEpisode.date) : '00.00.0000'}
-				</PlayerDate>
+				<PlayerDate>{selectedEpisode.date ? date : '00.00.0000'}</PlayerDate>
 			</div>
-			<p>{selectedPodcast.title ? selectedPodcast.title : 'No title'}</p>
-			<p>{selectedPodcast.author ? selectedPodcast.author : 'No author'}</p>
+			<p>{podcastTitle ? podcastTitle : 'No title'}</p>
+			<p>{podcastAuthor ? podcastAuthor : 'No author'}</p>
 			<ReactAudioPlayer controls src={selectedEpisode.url ? selectedEpisode.url : ''} />
 		</PlayerOverlay>
 	);
