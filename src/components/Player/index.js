@@ -1,6 +1,7 @@
 import ReactAudioPlayer from 'react-audio-player';
 
 import useStore from '../../hooks/useStore';
+import renderDate from '../utils/renderDate';
 
 import {PlayerOverlay, PlayerTitle, PlayerDate} from './styled';
 
@@ -17,7 +18,7 @@ export default function Player() {
 				</PlayerTitle>
 				<span> - </span>
 				<PlayerDate>
-					{selectedEpisode.date ? selectedEpisode.date : '00.00.0000'}
+					{selectedEpisode.date ? renderDate(selectedEpisode.date) : '00.00.0000'}
 				</PlayerDate>
 			</div>
 			<p>{selectedPodcast.title ? selectedPodcast.title : 'No title'}</p>
