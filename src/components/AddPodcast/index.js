@@ -13,7 +13,7 @@ export default function AddPodcast() {
 	const {addPodcast} = useStore();
 
 	function handleCancel(event) {
-		event.preventDefault();
+		
 		router.push('/');
 	}
 
