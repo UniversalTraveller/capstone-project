@@ -82,7 +82,7 @@ export default function AddPodcast() {
 			)}
 			{message === 'error' ? (
 				<AddPodcastNotificaton>
-					<p>This didn&lsquo;t work. Please provide a proper URL of a podcast feed.</p>
+					<p>This didn&lsquo;t work. Please provide the URL of a proper podcast feed.</p>
 					<ButtonRow>
 						<button type="button" onClick={() => setMessage('form')}>
 							Okay
