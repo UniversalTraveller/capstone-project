@@ -4,16 +4,19 @@ export default async function loadPodcastFeed(rssUrl) {
 	const res = await fetch(`https://api.allorigins.win/get?url=${rssUrl}`);
 	const {contents} = await res.json();
 	const feed = new window.DOMParser().parseFromString(contents, 'text/xml');
+
+	//get channel info
 	const channel = feed.querySelector('channel');
 
-	//iterate over all episodes
+	//get all podcast episodes
 	const items = feed.querySelectorAll('item');
 
-	//return an empty object if no episodes are found
-	if (!items.length) {
+	//check if proper podcast feed
+	if (!items || !channel) {
 		return {};
 	}
 
+	//map the podcast episodes to an array of objects
 	const feedItems = [...items].map(episode => ({
 		title: episode.querySelector('title') ? episode.querySelector('title').innerHTML : '',
 		url: episode.querySelector('enclosure')
@@ -36,11 +39,6 @@ export default async function loadPodcastFeed(rssUrl) {
 		key: nanoid(),
 		episodes: feedItems ? feedItems : [],
 	};
-
-	//return an object when no proper podcast feed is found
-	if (!feedChannel.length) {
-		return {};
-	}
 
 	return feedChannel;
 }
