@@ -19,6 +19,7 @@ export default function Player() {
 
 	function trimString(string, length) {
 		return string.length > length ? string.substring(0, length) + '...' : string;
+	}
 
 	const playerVolume = useStore(state => state.playerVolume);
 	const setPlayerVolume = useStore(state => state.setPlayerVolume);
