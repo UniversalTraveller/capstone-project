@@ -1,8 +1,8 @@
-import {nanoid} from 'nanoid';
 import {useRouter} from 'next/router';
 import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
+import loadPodcastFeed from '../utils/loadPodcastFeed';
 
 import {AddPodcastForm, ButtonRow, AddPodcastNotificaton, NotificationArea} from './styled';
 
@@ -19,6 +19,7 @@ export default function AddPodcast() {
 	async function handleSubmit(event) {
 		event.preventDefault();
 		const rssUrl = event.target.feedUrl.value;
+
 		//check whether input is valid
 		const urlRegex =
 			/(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?/;
@@ -26,44 +27,14 @@ export default function AddPodcast() {
 			setMessage('error');
 			return;
 		}
-		const res = await fetch(`https://api.allorigins.win/get?url=${rssUrl}`);
-		const {contents} = await res.json();
-		const feed = new window.DOMParser().parseFromString(contents, 'text/xml');
 
-		const channel = feed.querySelector('channel');
+		//load podcast feed from provided url
+		const feedChannel = await loadPodcastFeed(rssUrl);
 
-		const items = feed.querySelectorAll('item');
-		const feedItems = [...items].map(episode => ({
-			title: episode.querySelector('title') ? episode.querySelector('title').innerHTML : '',
-			url: episode.querySelector('enclosure')
-				? episode.querySelector('enclosure').getAttribute('url')
-				: '',
-			date: episode.querySelector('pubDate')
-				? episode.querySelector('pubDate').innerHTML
-				: '',
-			key: nanoid(),
-			length: episode.querySelector('duration')
-				? episode.querySelector('duration').innerHTML
-				: '',
-		}));
-
-		const feedChannel = {
-			title: channel.querySelector('title') ? channel.querySelector('title').innerHTML : '',
-			author: channel.querySelector('author')
-				? channel.querySelector('author').innerHTML
-				: '',
-			feed: channel.querySelector('[rel="self"]').getAttribute('href')
-				? channel.querySelector('[rel="self"]').getAttribute('href')
-				: '',
-			key: nanoid(),
-			episodes: feedItems ? feedItems : [],
-		};
-		console.log(feedChannel);
+		//add podcast to store
 		addPodcast(feedChannel);
 
 		setMessage('success');
-
-		console.log(rssUrl);
 	}
 
 	function handleConfirmation(event) {
