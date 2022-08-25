@@ -1,4 +1,5 @@
 import Header from './Header';
+
 import {MainContentArea} from './MainContentArea/styled';
 
 export default function Layout({children}) {
@@ -7,5 +8,6 @@ export default function Layout({children}) {
 			<Header />
 			<main>{children}</main>
 		</MainContentArea>
+
 	);
 }

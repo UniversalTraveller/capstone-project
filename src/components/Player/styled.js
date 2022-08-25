@@ -7,8 +7,7 @@ export const PlayerOverlay = styled.article`
 	left: 0;
 	flex-direction: column;
 	width: 100%;
-	height: 20%;
-	min-height: 12rem;
+	height: 12rem;
 	padding: 2rem;
 	gap: 0.3rem;
 	background-color: #777;

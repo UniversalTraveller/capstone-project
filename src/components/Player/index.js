@@ -9,6 +9,7 @@ import {PlayerOverlay, PlayerTitle, PlayerDate} from './styled';
 export default function Player() {
 	const podcasts = useStore(state => state.podcasts);
 	const selectedEpisode = useStore(state => state.selectedEpisode);
+
 	const selectedPodcast = podcasts.find(podcast => podcast.episodes.includes(selectedEpisode));
 
 	//prepare output
@@ -19,6 +20,14 @@ export default function Player() {
 
 	function trimString(string, length) {
 		return string.length > length ? string.substring(0, length) + '...' : string;
+
+	const playerVolume = useStore(state => state.playerVolume);
+	const setPlayerVolume = useStore(state => state.setPlayerVolume);
+
+	function handleVolumeChange(event) {
+		const volume = event.srcElement.volume;
+		setPlayerVolume(volume);
+
 	}
 
 	return (
@@ -30,9 +39,18 @@ export default function Player() {
 				<span> - </span>
 				<PlayerDate>{selectedEpisode.date ? date : '00.00.0000'}</PlayerDate>
 			</div>
+
 			<p>{podcastTitle ? podcastTitle : 'No title'}</p>
 			<p>{podcastAuthor ? podcastAuthor : 'No author'}</p>
-			<ReactAudioPlayer controls src={selectedEpisode.url ? selectedEpisode.url : ''} />
+		
+
+			<ReactAudioPlayer
+				controls
+				src={selectedEpisode.url ? selectedEpisode.url : ''}
+				onVolumeChanged={handleVolumeChange}
+				volume={playerVolume}
+			/>
+
 		</PlayerOverlay>
 	);
 }
