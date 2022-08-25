@@ -42,8 +42,8 @@ export default function AddPodcast() {
 				? episode.querySelector('pubDate').innerHTML
 				: '',
 			key: nanoid(),
-			length: episode.querySelector('itunes\\:duration')
-				? episode.querySelector('itunes\\:duration').innerHTML
+			length: episode.querySelector('duration')
+				? episode.querySelector('duration').innerHTML
 				: '',
 		}));
 
