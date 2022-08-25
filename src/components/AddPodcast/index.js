@@ -9,6 +9,7 @@ import {AddPodcastForm, ButtonRow, AddPodcastNotificaton, NotificationArea} from
 export default function AddPodcast() {
 	const router = useRouter();
 	const [message, setMessage] = useState('form');
+	const [addedPodcastTitle, setAddedPodcastTitle] = useState('');
 	const {addPodcast} = useStore();
 
 	function handleCancel(event) {
@@ -30,6 +31,7 @@ export default function AddPodcast() {
 
 		const feedChannel = await loadPodcastFeed(rssUrl); //load podcast feed from provided url
 		addPodcast(feedChannel); //add podcast to store
+		setAddedPodcastTitle(feedChannel.title); //set added podcast title for notification
 		setMessage('success');
 	}
 
@@ -63,7 +65,7 @@ export default function AddPodcast() {
 			)}
 			{message === 'success' ? (
 				<AddPodcastNotificaton>
-					<p>Added new Podcast.</p>
+					<p>Added new Podcast: {addedPodcastTitle}</p>
 					<ButtonRow>
 						<button type="button" onClick={handleConfirmation}>
 							Okay, cool!
