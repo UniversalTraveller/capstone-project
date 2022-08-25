@@ -9,7 +9,7 @@ export default function AddPodcastPage() {
 	const podcasts = useStore(state => state.podcasts);
 	return (
 		<>
-			<AddPodcast></AddPodcast>
+			<AddPodcast />
 			<Layout>
 				<Head>
 					<title key="title">Podcast Player - Add Podcast</title>
