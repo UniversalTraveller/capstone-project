@@ -1,11 +1,11 @@
 import Header from './Header';
-import {MainArea} from './MainArea/styled';
+import {MainContentArea} from './MainContentArea/styled';
 
 export default function Layout({children}) {
 	return (
-		<MainArea>
+		<MainContentArea>
 			<Header />
 			<main>{children}</main>
-		</MainArea>
+		</MainContentArea>
 	);
 }

@@ -33,7 +33,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	margin: 2rem;
+	margin: 0;
 	line-height: 1;
 
 }
