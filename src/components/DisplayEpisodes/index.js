@@ -1,4 +1,5 @@
 import useStore from '../../hooks/useStore';
+import convertSeconds from '../../utils/convertSeconds';
 import decodeHtml from '../../utils/decodeHtml';
 import renderDate from '../../utils/renderDate';
 
@@ -25,7 +26,8 @@ export default function DisplayEpisodes({episodes}) {
 				>
 					<p>{episode.title}</p>
 					<p>
-						<span>{episode.length}</span> - <span>{renderDate(episode.date)}</span>
+						<span>{convertSeconds(episode.length)}</span> -{' '}
+						<span>{renderDate(episode.date)}</span>
 					</p>
 				</EpisodeCard>
 			))}
