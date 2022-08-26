@@ -12,10 +12,6 @@ export default function AddPodcast() {
 	const [addedPodcastTitle, setAddedPodcastTitle] = useState('');
 	const {addPodcast} = useStore();
 
-	function handleCancel() {
-		router.push('/');
-	}
-
 	async function handleSubmit(event) {
 		event.preventDefault();
 		const rssUrl = event.target.feedUrl.value;
@@ -39,10 +35,6 @@ export default function AddPodcast() {
 		setMessage('success');
 	}
 
-	function handleConfirmation() {
-		router.push('/');
-	}
-
 	return (
 		<NotificationArea>
 			{message === 'form' ? (
@@ -58,7 +50,7 @@ export default function AddPodcast() {
 					/>
 					<ButtonRow>
 						<button type="submit">Submit</button>
-						<button type="button" onClick={handleCancel}>
+						<button type="button" onClick={() => router.push('/')}>
 							Cancel
 						</button>
 					</ButtonRow>
@@ -70,7 +62,7 @@ export default function AddPodcast() {
 				<AddPodcastNotificaton>
 					<p>Added new Podcast: {addedPodcastTitle}</p>
 					<ButtonRow>
-						<button type="button" onClick={handleConfirmation}>
+						<button type="button" onClick={() => router.push('/')}>
 							Okay, cool!
 						</button>
 					</ButtonRow>
@@ -85,7 +77,7 @@ export default function AddPodcast() {
 						<button type="button" onClick={() => setMessage('form')}>
 							Okay
 						</button>
-						<button typge="button" onClick={handleCancel}>
+						<button typge="button" onClick={() => router.push('/')}>
 							Cancel
 						</button>
 					</ButtonRow>
