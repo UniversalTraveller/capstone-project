@@ -24,6 +24,11 @@ export default function Header() {
 						<NavigationLink>Add</NavigationLink>
 					</Link>
 				) : null}
+				{path === '/episodes' || path === '/delete-podcast' ? (
+					<Link href="/delete-podcast">
+						<NavigationLink>Delete</NavigationLink>
+					</Link>
+				) : null}
 			</nav>
 		</HeaderBar>
 	);
