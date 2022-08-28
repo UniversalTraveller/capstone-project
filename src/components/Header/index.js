@@ -21,12 +21,12 @@ export default function Header() {
 				{/* show add podcast button only when relevant */}
 				{path === '/' || path === '/add-podcast' ? (
 					<Link href="/add-podcast">
-						<NavigationLink>Add</NavigationLink>
+						<NavigationLink>Add Podcast</NavigationLink>
 					</Link>
 				) : null}
 				{path === '/episodes' || path === '/delete-podcast' ? (
 					<Link href="/delete-podcast">
-						<NavigationLink>Delete</NavigationLink>
+						<NavigationLink>Delete Podcast</NavigationLink>
 					</Link>
 				) : null}
 			</nav>
