@@ -6,10 +6,13 @@ import renderDate from '../../utils/renderDate';
 import {EpisodeCard} from './styled';
 
 export default function DisplayEpisodes({episodes}) {
-	const setSelectedEpisode = useStore(state => state.setSelectedEpisode);
+	const setEpisodePlaying = useStore(state => state.setEpisodePlaying);
+	const setPodcastPlaying = useStore(state => state.setPodcastPlaying);
+	const podcasts = useStore(state => state.podcasts);
 
 	function handleClick(episode) {
-		setSelectedEpisode(episode);
+		setEpisodePlaying(episode);
+		setPodcastPlaying(podcasts.find(podcast => podcast.episodes.includes(episode)));
 	}
 
 	return (
