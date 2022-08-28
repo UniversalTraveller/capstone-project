@@ -6,7 +6,7 @@ export const NotificationArea = styled.div`
 	background: #888;
 `;
 
-export const AddPodcastForm = styled.form`
+export const Form = styled.form`
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
@@ -17,7 +17,7 @@ export const ButtonRow = styled.div`
 	gap: 0.5rem;
 `;
 
-export const AddPodcastNotificaton = styled.div`
+export const Notification = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
