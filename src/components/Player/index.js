@@ -12,10 +12,10 @@ export default function Player() {
 	const selectedPodcast = podcasts.find(podcast => podcast.episodes.includes(selectedEpisode));
 
 	//prepare output
-	const podcastTitle = trimString(decodeHtml(selectedPodcast.title), 60);
-	const podcastAuthor = trimString(decodeHtml(selectedPodcast.author), 60);
-	const episodeTitle = trimString(decodeHtml(selectedEpisode.title), 72);
-	const date = renderDate(selectedEpisode.date);
+	const podcastTitle = selectedPodcast ? trimString(decodeHtml(selectedPodcast.title), 60) : '';
+	const podcastAuthor = selectedPodcast ? trimString(decodeHtml(selectedPodcast.author), 60) : '';
+	const episodeTitle = selectedEpisode ? trimString(decodeHtml(selectedEpisode.title), 72) : '';
+	const date = selectedEpisode ? renderDate(selectedEpisode.date) : '';
 
 	function trimString(string, length) {
 		return string.length > length ? string.substring(0, length) + '...' : string;

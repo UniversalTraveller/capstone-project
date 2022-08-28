@@ -73,6 +73,11 @@ const useStore = create(set => ({
 	addPodcast: podcast => {
 		set(state => ({podcasts: [...state.podcasts, podcast]}));
 	},
+	deletePodcast: () => {
+		set(state => ({
+			podcasts: state.podcasts.filter(podcast => podcast.key !== state.selectedPodcast.key),
+		}));
+	},
 }));
 
 export default useStore;
