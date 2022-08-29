@@ -24,7 +24,7 @@ export default function DisplayEpisodes({episodes}) {
 					name={decodeHtml(episode.title)}
 					type="button"
 				>
-					<p>{episode.title}</p>
+					<p>{decodeHtml(episode.title)}</p>
 					<p>
 						<span>{convertSeconds(episode.length)}</span> -{' '}
 						<span>{renderDate(episode.date)}</span>
