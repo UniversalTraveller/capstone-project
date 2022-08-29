@@ -7,9 +7,11 @@ export default function DeletePodcast() {
 	const router = useRouter();
 	const selectedPodcast = useStore(state => state.selectedPodcast);
 	const deletePodcast = useStore(state => state.deletePodcast);
+	const setSelectedEpisodes = useStore(state => state.setSelectedEpisodes);
 
 	function handleDelete() {
 		deletePodcast();
+		setSelectedEpisodes([]);
 		router.push('/');
 	}
 
