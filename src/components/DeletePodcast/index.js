@@ -18,7 +18,9 @@ export default function DeletePodcast() {
 			<Notification>
 				Do you really want to delete &quot;{selectedPodcast.title}&quot;?
 				<ButtonRow>
-					<button onClick={() => handleDelete()}>Okay</button>
+					<button onClick={() => handleDelete()} name="okay">
+						Okay
+					</button>
 					<button onClick={() => router.push('/episodes')}>Cancel</button>
 				</ButtonRow>
 			</Notification>
