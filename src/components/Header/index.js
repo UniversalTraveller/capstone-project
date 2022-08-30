@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 
+import useStore from '../../hooks/useStore';
 import {NavigationLink} from '../NavigatonLink/styled';
 
 import {HeaderBar} from './styled';
@@ -8,6 +9,7 @@ import {HeaderBar} from './styled';
 export default function Header() {
 	const router = useRouter();
 	const path = router.asPath;
+	const podcasts = useStore(state => state.podcasts);
 	return (
 		<HeaderBar>
 			<nav>
@@ -24,7 +26,7 @@ export default function Header() {
 						<NavigationLink>Add Podcast</NavigationLink>
 					</Link>
 				) : null}
-				{path === '/episodes' || path === '/delete-podcast' ? (
+				{(path === '/episodes' || path === '/delete-podcast') && podcasts.length ? (
 					<Link href="/delete-podcast">
 						<NavigationLink>Delete Podcast</NavigationLink>
 					</Link>
