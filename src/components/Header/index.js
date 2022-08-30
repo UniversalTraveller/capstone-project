@@ -9,7 +9,7 @@ import {HeaderBar} from './styled';
 export default function Header() {
 	const router = useRouter();
 	const path = router.asPath;
-	const podcasts = useStore(state => state.podcasts);
+	const selectedEpisodes = useStore(state => state.selectedEpisodes);
 	return (
 		<HeaderBar>
 			<nav>
@@ -26,7 +26,7 @@ export default function Header() {
 						<NavigationLink>Add Podcast</NavigationLink>
 					</Link>
 				) : null}
-				{(path === '/episodes' || path === '/delete-podcast') && podcasts.length ? (
+				{(path === '/episodes' || path === '/delete-podcast') && selectedEpisodes.length ? (
 					<Link href="/delete-podcast">
 						<NavigationLink>Delete Podcast</NavigationLink>
 					</Link>
