@@ -62,16 +62,23 @@ const defaultPodcast = {
 
 const useStore = create(set => ({
 	selectedPodcast: defaultPodcast,
-	selectedEpisode: defaultPodcast.episodes[0],
+	episodePlaying: defaultPodcast.episodes[0],
 	selectedEpisodes: defaultPodcast.episodes,
+	podcastPlaying: defaultPodcast,
 	setSelectedPodcast: podcast => set({selectedPodcast: podcast}),
-	setSelectedEpisode: episode => set({selectedEpisode: episode}),
+	setEpisodePlaying: episode => set({episodePlaying: episode}),
 	setSelectedEpisodes: episodes => set({selectedEpisodes: episodes}),
+	setPodcastPlaying: podcast => set({podcastPlaying: podcast}),
 	playerVolume: 0.5,
 	setPlayerVolume: volume => set({playerVolume: volume}),
 	podcasts: [defaultPodcast],
 	addPodcast: podcast => {
 		set(state => ({podcasts: [...state.podcasts, podcast]}));
+	},
+	deletePodcast: () => {
+		set(state => ({
+			podcasts: state.podcasts.filter(podcast => podcast.key !== state.selectedPodcast.key),
+		}));
 	},
 }));
 

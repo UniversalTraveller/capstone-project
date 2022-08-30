@@ -3,8 +3,7 @@ import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
 import loadPodcastFeed from '../../utils/loadPodcastFeed';
-
-import {AddPodcastForm, ButtonRow, AddPodcastNotificaton, NotificationArea} from './styled';
+import {Form, ButtonRow, Notification, NotificationArea} from '../NotificationArea/styled';
 
 export default function AddPodcast() {
 	const router = useRouter();
@@ -38,7 +37,7 @@ export default function AddPodcast() {
 	return (
 		<NotificationArea>
 			{message === 'form' ? (
-				<AddPodcastForm onSubmit={handleSubmit}>
+				<Form onSubmit={handleSubmit}>
 					<label htmlFor="feedUrl">
 						Please enter the feed URL of a podcast you want to add:
 					</label>
@@ -54,24 +53,24 @@ export default function AddPodcast() {
 							Cancel
 						</button>
 					</ButtonRow>
-				</AddPodcastForm>
+				</Form>
 			) : (
 				''
 			)}
 			{message === 'success' ? (
-				<AddPodcastNotificaton>
+				<Notification>
 					<p>Added new Podcast: {addedPodcastTitle}</p>
 					<ButtonRow>
 						<button type="button" onClick={() => router.push('/')}>
 							Okay, cool!
 						</button>
 					</ButtonRow>
-				</AddPodcastNotificaton>
+				</Notification>
 			) : (
 				''
 			)}
 			{message === 'error' ? (
-				<AddPodcastNotificaton>
+				<Notification>
 					<p>This didn&lsquo;t work. Please provide the URL of a proper podcast feed.</p>
 					<ButtonRow>
 						<button type="button" onClick={() => setMessage('form')}>
@@ -81,7 +80,7 @@ export default function AddPodcast() {
 							Cancel
 						</button>
 					</ButtonRow>
-				</AddPodcastNotificaton>
+				</Notification>
 			) : (
 				''
 			)}

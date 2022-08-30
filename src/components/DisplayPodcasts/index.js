@@ -7,10 +7,12 @@ import {PodcastCard} from './styled';
 
 export default function DisplayPodcasts({podcasts}) {
 	const setSelectedEpisodes = useStore(state => state.setSelectedEpisodes);
+	const setSelectedPodcast = useStore(state => state.setSelectedPodcast);
 	const router = useRouter();
 
 	function handleSelectedPodcast(podcast) {
 		setSelectedEpisodes(podcast.episodes);
+		setSelectedPodcast(podcast);
 		router.push('/episodes');
 	}
 	return (
