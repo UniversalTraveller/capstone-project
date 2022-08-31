@@ -14,6 +14,16 @@ const create = createState => {
 	const initialState = store.getState();
 
 	initialState.deletePodcast = jest.fn();
+	initialState.addTagToPodcast = jest.fn();
+	initialState.removeTagFromPodcast = jest.fn();
+	initialState.podcasts = [
+		{
+			title: 'Title',
+			author: 'Author',
+			key: 1,
+			tags: ['web development', 'news', 'tech'],
+		},
+	];
 
 	storeResetFns.add(() => store.setState(initialState, true));
 	return store;
