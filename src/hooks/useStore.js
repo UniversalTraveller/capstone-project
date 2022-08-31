@@ -61,6 +61,19 @@ const defaultPodcast = {
 	],
 };
 
+const defaultTags = [
+	'news',
+	'web development',
+	'art',
+	'tech',
+	'history',
+	'comedy',
+	'politics',
+	'science',
+	'sports',
+	'health',
+];
+
 const useStore = create(set => ({
 	selectedPodcast: defaultPodcast,
 	episodePlaying: defaultPodcast.episodes[0],
@@ -81,18 +94,7 @@ const useStore = create(set => ({
 			podcasts: state.podcasts.filter(podcast => podcast.key !== state.selectedPodcast.key),
 		}));
 	},
-	tags: [
-		'news',
-		'web development',
-		'art',
-		'tech',
-		'history',
-		'comedy',
-		'politics',
-		'science',
-		'sports',
-		'health',
-	],
+	tags: defaultTags,
 	addTagToPodcast: (tag, podcastToTag) => {
 		console.log(tag, podcastToTag.title);
 		set(state => ({

@@ -2,7 +2,7 @@ import {nanoid} from 'nanoid';
 
 import useStore from '../../hooks/useStore';
 
-import {Tag, TagList} from './styled';
+import {Tag, TagList, MiniButton} from './styled';
 
 export default function EditTags({selectedPodcast, tags}) {
 	const addTagToPodcast = useStore(state => state.addTagToPodcast);
@@ -26,7 +26,7 @@ export default function EditTags({selectedPodcast, tags}) {
 					? thePodcast.tags.map(tag => (
 							<Tag key={nanoid()}>
 								{tag}
-								<button onClick={() => handleRemoveTag(tag)}>-</button>
+								<MiniButton onClick={() => handleRemoveTag(tag)}>-</MiniButton>
 							</Tag>
 					  ))
 					: (thePodcast.tags = [])}
@@ -38,7 +38,7 @@ export default function EditTags({selectedPodcast, tags}) {
 						thePodcast.tags.find(podcastTag => tag === podcastTag) ? null : (
 							<Tag key={nanoid()}>
 								{tag}
-								<button onClick={() => handleAddTag(tag)}>+</button>
+								<MiniButton onClick={() => handleAddTag(tag)}>+</MiniButton>
 							</Tag>
 						)
 					)}
