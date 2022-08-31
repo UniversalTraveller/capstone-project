@@ -16,6 +16,12 @@ export default function DisplayPodcasts({podcasts}) {
 		setSelectedPodcast(podcast);
 		router.push('/episodes');
 	}
+
+	function handleEditTags(podcast) {
+		setSelectedPodcast(podcast);
+		router.push('/edit-tags');
+	}
+
 	return (
 		<>
 			{podcasts.map(podcast => (
@@ -26,7 +32,7 @@ export default function DisplayPodcasts({podcasts}) {
 						</p>
 						<p>{decodeHtml(podcast.author)}</p>
 					</PodcastButton>
-					<NavigationLink>Edit</NavigationLink>
+					<NavigationLink onClick={() => handleEditTags(podcast)}>Edit</NavigationLink>
 				</PodcastCard>
 			))}
 		</>
