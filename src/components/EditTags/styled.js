@@ -9,7 +9,7 @@ export const Tag = styled.li`
 export const TagList = styled.ul`
 	display: flex;
 	flex-wrap: wrap;
-	padding: 0.6rem 0;
+	//padding: 0.6rem 0;
 	list-style-type: none;
 	gap: 0.4rem;
 `;

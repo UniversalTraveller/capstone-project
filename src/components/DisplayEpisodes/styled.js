@@ -6,7 +6,7 @@ export const EpisodeCard = styled.button`
 	align-items: flex-start;
 	width: 100%;
 	max-width: 640px;
-	margin: 1rem 0;
+	margin: 0.2rem 0;
 	padding: 0.3rem;
 	border-width: 0 0 0.1rem 0;
 	border-style: solid;

@@ -1,5 +1,8 @@
+import Link from 'next/link';
+
 import EditTags from '../components/EditTags';
 import Layout from '../components/Layout';
+import {NavigationLink} from '../components/NavigatonLink/styled';
 import PodcastHeader from '../components/PodcastHeader';
 import useStore from '../hooks/useStore';
 export default function EditTagsPage() {
@@ -9,6 +12,9 @@ export default function EditTagsPage() {
 		<Layout>
 			<PodcastHeader />
 			<EditTags selectedPodcast={selectedPodcast} tags={tags} />
+			<Link href="/">
+				<NavigationLink>Done</NavigationLink>
+			</Link>
 		</Layout>
 	);
 }

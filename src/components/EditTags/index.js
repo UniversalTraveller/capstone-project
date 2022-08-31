@@ -31,19 +31,17 @@ export default function EditTags({selectedPodcast, tags}) {
 					  ))
 					: (thePodcast.tags = [])}
 			</TagList>
-			<p>
-				Unused Tags:
-				<TagList>
-					{tags.map(tag =>
-						thePodcast.tags.find(podcastTag => tag === podcastTag) ? null : (
-							<Tag key={nanoid()}>
-								{tag}
-								<MiniButton onClick={() => handleAddTag(tag)}>+</MiniButton>
-							</Tag>
-						)
-					)}
-				</TagList>
-			</p>
+			<p>Unused Tags:</p>
+			<TagList>
+				{tags.map(tag =>
+					thePodcast.tags.find(podcastTag => tag === podcastTag) ? null : (
+						<Tag key={nanoid()}>
+							{tag}
+							<MiniButton onClick={() => handleAddTag(tag)}>+</MiniButton>
+						</Tag>
+					)
+				)}
+			</TagList>
 		</>
 	);
 }

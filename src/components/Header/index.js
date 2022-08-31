@@ -12,26 +12,24 @@ export default function Header() {
 	const selectedEpisodes = useStore(state => state.selectedEpisodes);
 	return (
 		<HeaderBar>
-			<nav>
-				<Link href="/">
-					<NavigationLink>Podcasts</NavigationLink>
-				</Link>
-				<Link href="/episodes">
-					<NavigationLink>Episodes</NavigationLink>
-				</Link>
+			<Link href="/">
+				<NavigationLink>Podcasts</NavigationLink>
+			</Link>
+			<Link href="/episodes">
+				<NavigationLink>Episodes</NavigationLink>
+			</Link>
 
-				{/* show add podcast button only when relevant */}
-				{path === '/' || path === '/add-podcast' ? (
-					<Link href="/add-podcast">
-						<NavigationLink>Add Podcast</NavigationLink>
-					</Link>
-				) : null}
-				{(path === '/episodes' || path === '/delete-podcast') && selectedEpisodes.length ? (
-					<Link href="/delete-podcast">
-						<NavigationLink>Delete Podcast</NavigationLink>
-					</Link>
-				) : null}
-			</nav>
+			{/* show add podcast button only when relevant */}
+			{path === '/' || path === '/add-podcast' ? (
+				<Link href="/add-podcast">
+					<NavigationLink>Add Podcast</NavigationLink>
+				</Link>
+			) : null}
+			{(path === '/episodes' || path === '/delete-podcast') && selectedEpisodes.length ? (
+				<Link href="/delete-podcast">
+					<NavigationLink>Delete Podcast</NavigationLink>
+				</Link>
+			) : null}
 		</HeaderBar>
 	);
 }
