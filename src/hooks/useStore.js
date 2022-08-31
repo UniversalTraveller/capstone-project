@@ -81,13 +81,34 @@ const useStore = create(set => ({
 			podcasts: state.podcasts.filter(podcast => podcast.key !== state.selectedPodcast.key),
 		}));
 	},
-	tags: ['news', 'web development', 'art', 'tech', 'history'],
+	tags: [
+		'news',
+		'web development',
+		'art',
+		'tech',
+		'history',
+		'comedy',
+		'politics',
+		'science',
+		'sports',
+		'health',
+	],
 	addTagToPodcast: (tag, podcastToTag) => {
 		console.log(tag, podcastToTag.title);
 		set(state => ({
 			podcasts: state.podcasts.map(podcast => {
 				if (podcast.key === podcastToTag.key) {
 					return {...podcast, tags: [...podcast.tags, tag]};
+				}
+				return podcast;
+			}),
+		}));
+	},
+	removeTagFromPodcast: (tag, podcastToUntag) => {
+		set(state => ({
+			podcasts: state.podcasts.map(podcast => {
+				if (podcast.key === podcastToUntag.key) {
+					return {...podcast, tags: podcast.tags.filter(t => t !== tag)};
 				}
 				return podcast;
 			}),

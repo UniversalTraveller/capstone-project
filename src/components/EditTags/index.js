@@ -6,6 +6,7 @@ import {Tag, TagList} from './styled';
 
 export default function EditTags({selectedPodcast, tags}) {
 	const addTagToPodcast = useStore(state => state.addTagToPodcast);
+	const removeTagFromPodcast = useStore(state => state.removeTagFromPodcast);
 	const podcasts = useStore(state => state.podcasts);
 
 	// necessery to refresh the page after adding a tag
@@ -15,7 +16,7 @@ export default function EditTags({selectedPodcast, tags}) {
 	}
 
 	function handleRemoveTag(tag) {
-		console.log('handleRemoveTag', tag, selectedPodcast.title);
+		removeTagFromPodcast(tag, selectedPodcast);
 	}
 
 	return (
