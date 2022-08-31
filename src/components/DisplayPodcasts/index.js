@@ -32,7 +32,9 @@ export default function DisplayPodcasts({podcasts}) {
 						</p>
 						<p>{decodeHtml(podcast.author)}</p>
 					</PodcastButton>
-					<NavigationLink onClick={() => handleEditTags(podcast)}>Edit</NavigationLink>
+					<NavigationLink onClick={() => handleEditTags(podcast)}>
+						Edit Tags
+					</NavigationLink>
 				</PodcastCard>
 			))}
 		</>
