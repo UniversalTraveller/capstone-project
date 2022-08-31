@@ -6,6 +6,7 @@ const defaultPodcast = {
 	author: 'Wes Bos & Scott Tolinski',
 	feed: 'https://feed.syntax.fm/rss',
 	key: nanoid(),
+	tags: ['web development', 'news', 'tech'],
 	episodes: [
 		{
 			title: 'CSS Proposals @when, CSS Masonry, Carets',
@@ -80,6 +81,7 @@ const useStore = create(set => ({
 			podcasts: state.podcasts.filter(podcast => podcast.key !== state.selectedPodcast.key),
 		}));
 	},
+	tags: ['news', 'web development', 'art', 'tech', 'history'],
 }));
 
 export default useStore;
