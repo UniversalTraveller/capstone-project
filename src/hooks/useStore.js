@@ -82,6 +82,17 @@ const useStore = create(set => ({
 		}));
 	},
 	tags: ['news', 'web development', 'art', 'tech', 'history'],
+	addTagToPodcast: (tag, podcastToTag) => {
+		console.log(tag, podcastToTag.title);
+		set(state => ({
+			podcasts: state.podcasts.map(podcast => {
+				if (podcast.key === podcastToTag.key) {
+					return {...podcast, tags: [...podcast.tags, tag]};
+				}
+				return podcast;
+			}),
+		}));
+	},
 }));
 
 export default useStore;
