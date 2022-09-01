@@ -96,7 +96,6 @@ const useStore = create(set => ({
 	},
 	tags: defaultTags,
 	addTagToPodcast: (tag, podcastToTag) => {
-	
 		set(state => ({
 			podcasts: state.podcasts.map(podcast => {
 				if (podcast.key === podcastToTag.key) {
@@ -106,11 +105,11 @@ const useStore = create(set => ({
 			}),
 		}));
 	},
-	removeTagFromPodcast: (tag, podcastToUntag) => {
+	removeTagFromPodcast: (selectedTag, podcastToUntag) => {
 		set(state => ({
 			podcasts: state.podcasts.map(podcast => {
 				if (podcast.key === podcastToUntag.key) {
-					return {...podcast, tags: podcast.tags.filter(t => t !== tag)};
+					return {...podcast, tags: podcast.tags.filter(tag => tag !== selectedTag)};
 				}
 				return podcast;
 			}),
