@@ -36,9 +36,8 @@ export default function EditTags({selectedPodcast}) {
 			</TagList>
 			<p>Unused Tags:</p>
 			<TagList role="list">
-				{tags.map(tag =>
-					thePodcast.tags.find(podcastTag => tag === podcastTag) ? null : (
-						<Tag key={nanoid()}>
+				{tags.filter(tag => !podcasts.tags.includes(tag)).map(tag => (
+						<Tag key={tag}>
 							{tag}
 							<MiniButton onClick={() => handleAddTag(tag)}>+</MiniButton>
 						</Tag>
