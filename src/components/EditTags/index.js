@@ -36,13 +36,14 @@ export default function EditTags({selectedPodcast}) {
 			</TagList>
 			<p>Unused Tags:</p>
 			<TagList role="list">
-				{tags.filter(tag => !podcasts.tags.includes(tag)).map(tag => (
+				{tags
+					.filter(tag => !thePodcast.tags.includes(tag))
+					.map(tag => (
 						<Tag key={tag}>
 							{tag}
 							<MiniButton onClick={() => handleAddTag(tag)}>+</MiniButton>
 						</Tag>
-					)
-				)}
+					))}
 			</TagList>
 		</>
 	);
