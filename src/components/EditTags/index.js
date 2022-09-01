@@ -4,10 +4,11 @@ import useStore from '../../hooks/useStore';
 
 import {Tag, TagList, MiniButton} from './styled';
 
-export default function EditTags({selectedPodcast, tags}) {
+export default function EditTags({selectedPodcast}) {
 	const addTagToPodcast = useStore(state => state.addTagToPodcast);
 	const removeTagFromPodcast = useStore(state => state.removeTagFromPodcast);
 	const podcasts = useStore(state => state.podcasts);
+	const tags = useStore(state => state.tags);
 
 	// necessery to refresh the page after adding a tag
 	const thePodcast = podcasts.find(podcast => podcast.key === selectedPodcast.key);
