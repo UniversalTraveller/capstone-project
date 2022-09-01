@@ -38,6 +38,7 @@ export default async function loadPodcastFeed(rssUrl) {
 			: '',
 		key: nanoid(),
 		episodes: feedItems ? feedItems : [],
+		tags: [],
 	};
 
 	return feedChannel;
