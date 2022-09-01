@@ -21,18 +21,20 @@ export default function EditTags({selectedPodcast, tags}) {
 
 	return (
 		<>
-			<TagList>
-				{thePodcast.tags.length
-					? thePodcast.tags.map(tag => (
-							<Tag key={nanoid()}>
-								{tag}
-								<MiniButton onClick={() => handleRemoveTag(tag)}>-</MiniButton>
-							</Tag>
-					  ))
-					: <span>This podcast has no tags yet.</span>}
+			<TagList role="list">
+				{thePodcast.tags.length ? (
+					thePodcast.tags.map(tag => (
+						<Tag key={nanoid()}>
+							{tag}
+							<MiniButton onClick={() => handleRemoveTag(tag)}>-</MiniButton>
+						</Tag>
+					))
+				) : (
+					<span>This podcast has no tags yet.</span>
+				)}
 			</TagList>
 			<p>Unused Tags:</p>
-			<TagList>
+			<TagList role="list">
 				{tags.map(tag =>
 					thePodcast.tags.find(podcastTag => tag === podcastTag) ? null : (
 						<Tag key={nanoid()}>
