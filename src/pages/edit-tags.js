@@ -13,7 +13,7 @@ export default function EditTagsPage() {
 			<PodcastHeader />
 			<EditTags selectedPodcast={selectedPodcast} tags={tags} />
 			<Link href="/">
-				<NavigationLink>Done</NavigationLink>
+				<NavigationLink>Return</NavigationLink>
 			</Link>
 		</Layout>
 	);
