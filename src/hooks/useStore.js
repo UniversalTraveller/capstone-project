@@ -96,7 +96,7 @@ const useStore = create(set => ({
 	},
 	tags: defaultTags,
 	addTagToPodcast: (tag, podcastToTag) => {
-		console.log(tag, podcastToTag.title);
+	
 		set(state => ({
 			podcasts: state.podcasts.map(podcast => {
 				if (podcast.key === podcastToTag.key) {
