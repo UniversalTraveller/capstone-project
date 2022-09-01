@@ -27,10 +27,8 @@ export default function DisplayPodcasts({podcasts}) {
 			{podcasts.map(podcast => (
 				<PodcastCard key={podcast.key}>
 					<PodcastButton onClick={() => handleSelectedPodcast(podcast)}>
-						<p>
-							<a>{decodeHtml(podcast.title)}</a>
-						</p>
-						<p>{decodeHtml(podcast.author)}</p>
+						<span>{decodeHtml(podcast.title)}</span>
+						<span>{decodeHtml(podcast.author)}</span>
 					</PodcastButton>
 					<NavigationLink onClick={() => handleEditTags(podcast)}>
 						Edit Tags
