@@ -6,6 +6,7 @@ const defaultPodcast = {
 	author: 'Wes Bos & Scott Tolinski',
 	feed: 'https://feed.syntax.fm/rss',
 	key: nanoid(),
+	tags: ['web development', 'news', 'tech'],
 	episodes: [
 		{
 			title: 'CSS Proposals @when, CSS Masonry, Carets',
@@ -60,6 +61,19 @@ const defaultPodcast = {
 	],
 };
 
+const defaultTags = [
+	'news',
+	'web development',
+	'art',
+	'tech',
+	'history',
+	'comedy',
+	'politics',
+	'science',
+	'sports',
+	'health',
+];
+
 const useStore = create(set => ({
 	selectedPodcast: defaultPodcast,
 	episodePlaying: defaultPodcast.episodes[0],
@@ -78,6 +92,27 @@ const useStore = create(set => ({
 	deletePodcast: () => {
 		set(state => ({
 			podcasts: state.podcasts.filter(podcast => podcast.key !== state.selectedPodcast.key),
+		}));
+	},
+	tags: defaultTags,
+	addTagToPodcast: (tag, podcastToTag) => {
+		set(state => ({
+			podcasts: state.podcasts.map(podcast => {
+				if (podcast.key === podcastToTag.key) {
+					return {...podcast, tags: [...podcast.tags, tag]};
+				}
+				return podcast;
+			}),
+		}));
+	},
+	removeTagFromPodcast: (selectedTag, podcastToUntag) => {
+		set(state => ({
+			podcasts: state.podcasts.map(podcast => {
+				if (podcast.key === podcastToUntag.key) {
+					return {...podcast, tags: podcast.tags.filter(tag => tag !== selectedTag)};
+				}
+				return podcast;
+			}),
 		}));
 	},
 }));

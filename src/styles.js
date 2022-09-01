@@ -64,4 +64,11 @@ html {
 	font-size: 16px;
 }
 
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start ;
+	gap: 0.8rem;
+}
+
 `;
