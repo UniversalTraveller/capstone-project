@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const PodcastButton = styled.button`
+export const PodcastLink = styled.a`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
