@@ -95,6 +95,9 @@ const useStore = create(set => ({
 		}));
 	},
 	tags: defaultTags,
+	addTag: tag => {
+		set(state => ({tags: [...state.tags, tag]}));
+	},
 	addTagToPodcast: (tag, podcastToTag) => {
 		set(state => ({
 			podcasts: state.podcasts.map(podcast => {

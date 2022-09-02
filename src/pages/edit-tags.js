@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import CreateTags from '../components/CreateTags';
 import EditTags from '../components/EditTags';
 import Layout from '../components/Layout';
 import {NavigationLink} from '../components/NavigatonLink/styled';
@@ -12,6 +13,7 @@ export default function EditTagsPage() {
 		<Layout>
 			<PodcastHeader />
 			<EditTags selectedPodcast={selectedPodcast} />
+			<CreateTags selectedPodcast={selectedPodcast} />
 			<Link href="/">
 				<NavigationLink>Return</NavigationLink>
 			</Link>
