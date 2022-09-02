@@ -1,5 +1,3 @@
-import {nanoid} from 'nanoid';
-
 import useStore from '../../hooks/useStore';
 
 import {Tag, TagList, MiniButton} from './styled';
@@ -25,7 +23,7 @@ export default function EditTags({selectedPodcast}) {
 			<TagList role="list">
 				{thePodcast.tags.length ? (
 					thePodcast.tags.map(tag => (
-						<Tag key={nanoid()}>
+						<Tag key={tag}>
 							{tag}
 							<MiniButton onClick={() => handleRemoveTag(tag)}>-</MiniButton>
 						</Tag>
