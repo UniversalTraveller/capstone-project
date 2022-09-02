@@ -46,8 +46,10 @@ export default function CreateTags({selectedPodcast}) {
 
 				<button type="submit">Submit</button>
 			</FormRow>
-			{duplicateTags.length ? (
-				<FormRow>The following tags already exist: {duplicateTags.join(', ')}</FormRow>
+			{duplicateTags.length === 1 ? (
+				<FormRow>Didn&apos;t create existing tag: {duplicateTags}</FormRow>
+			) : duplicateTags.length > 1 ? (
+				<FormRow>Didn&apos;t create existing tags: {duplicateTags.join(', ')}</FormRow>
 			) : null}
 		</Form>
 	);
