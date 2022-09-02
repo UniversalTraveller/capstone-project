@@ -1,7 +1,8 @@
 import {useRouter} from 'next/router';
 
 import useStore from '../../hooks/useStore';
-import {ButtonRow, Notification, NotificationArea} from '../NotificationArea/styled';
+import {FormRow} from '../Form/styled';
+import {Notification, NotificationArea} from '../NotificationArea/styled';
 
 export default function DeletePodcast() {
 	const router = useRouter();
@@ -19,12 +20,12 @@ export default function DeletePodcast() {
 		<NotificationArea>
 			<Notification>
 				Do you really want to delete &quot;{selectedPodcast.title}&quot;?
-				<ButtonRow>
+				<FormRow>
 					<button onClick={() => handleDelete()} name="okay">
 						Okay
 					</button>
 					<button onClick={() => router.push('/episodes')}>Cancel</button>
-				</ButtonRow>
+				</FormRow>
 			</Notification>
 		</NotificationArea>
 	);

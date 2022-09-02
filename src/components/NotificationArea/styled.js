@@ -6,17 +6,6 @@ export const NotificationArea = styled.div`
 	background: #888;
 `;
 
-export const Form = styled.form`
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-`;
-
-export const ButtonRow = styled.div`
-	display: flex;
-	gap: 0.5rem;
-`;
-
 export const Notification = styled.div`
 	display: flex;
 	flex-direction: column;
