@@ -32,8 +32,6 @@ export default function CreateTags({selectedPodcast}) {
 				addTag(tag);
 			} else {
 				duplicateTags.push(tag);
-				setDuplicateTags(duplicateTags);
-				console.log(duplicateTags);
 			}
 		});
 	}
