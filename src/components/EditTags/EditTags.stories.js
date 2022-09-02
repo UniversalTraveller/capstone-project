@@ -28,6 +28,19 @@ Default.args = {
 const story = {
 	title: 'EditTags',
 	component: EditTags,
+	decorators: [
+		Story => (
+			<div
+				style={{
+					display: 'flex',
+					flexDirection: 'column',
+					gap: '0.8rem',
+				}}
+			>
+				<Story />
+			</div>
+		),
+	],
 };
 
 export default story;
