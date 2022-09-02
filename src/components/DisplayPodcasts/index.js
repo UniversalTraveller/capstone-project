@@ -2,6 +2,7 @@ import {useRouter} from 'next/router';
 
 import useStore from '../../hooks/useStore';
 import decodeHtml from '../../utils/decodeHtml';
+import {Tag, TagList} from '../EditTags/styled';
 import {NavigationLink} from '../NavigatonLink/styled';
 
 import {PodcastCard, PodcastLink} from './styled';
@@ -30,6 +31,11 @@ export default function DisplayPodcasts({podcasts}) {
 						<span>{decodeHtml(podcast.title)}</span>
 						<span>{decodeHtml(podcast.author)}</span>
 					</PodcastLink>
+					<TagList role="list">
+						{podcast.tags.length
+							? podcast.tags.map(tag => <Tag key={tag}>{tag}</Tag>)
+							: ''}
+					</TagList>
 					<NavigationLink onClick={() => handleEditTags(podcast)}>
 						Edit Tags
 					</NavigationLink>

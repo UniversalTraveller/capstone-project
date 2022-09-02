@@ -14,6 +14,7 @@ Default.args = {
 			title: 'CSS Proposals @when, CSS Masonry, Carets',
 			author: 'Wes Bos & Scott Tolinski',
 			key: nanoid(),
+			tags: ['tech', 'web developement'],
 		},
 	],
 };
