@@ -32,11 +32,9 @@ export default function DisplayPodcasts({podcasts}) {
 						<span>{decodeHtml(podcast.author)}</span>
 					</PodcastLink>
 					<TagList role="list">
-						{podcast.tags.length ? (
-							podcast.tags.map(tag => <Tag key={tag}>{tag}</Tag>)
-						) : (
-							<span>This podcast has no tags yet.</span>
-						)}
+						{podcast.tags.length
+							? podcast.tags.map(tag => <Tag key={tag}>{tag}</Tag>)
+							: ''}
 					</TagList>
 					<NavigationLink onClick={() => handleEditTags(podcast)}>
 						Edit Tags
