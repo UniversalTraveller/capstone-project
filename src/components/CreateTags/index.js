@@ -16,7 +16,7 @@ export default function CreateTags({selectedPodcast}) {
 		duplicateTags = [];
 		setDuplicateTags(duplicateTags);
 
-		const input = event.target.tags.value;
+		const input = event.target.elements.tags.value;
 
 		// avoid creation of empty tags
 		if (input.length === 0) {
@@ -34,10 +34,12 @@ export default function CreateTags({selectedPodcast}) {
 				duplicateTags.push(tag);
 			}
 		});
+
+		event.target.reset();
 	}
 
 	return (
-		<Form onSubmit={handleSubmit}>
+		<Form onSubmit={handleSubmit} title="newTags">
 			<FormRow>
 				<label htmlFor="tags">Create new tags:</label>
 			</FormRow>
