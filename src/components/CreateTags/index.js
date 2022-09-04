@@ -22,15 +22,14 @@ export default function CreateTags({selectedPodcast}) {
 
 		newTags.forEach(tag => {
 			// check for empty tags or tags that only contain spaces (wedged between commas)
-			if (tag.trim().length) {
+			if (tag.length) {
 				// check if the tag already exists
-				if (tag.trim())
-					if (!selectedPodcast.tags.includes(tag) && !tags.includes(tag)) {
-						addTagToPodcast(tag, selectedPodcast);
-						addTag(tag);
-					} else {
-						duplicateTags.push(tag);
-					}
+				if (!selectedPodcast.tags.includes(tag) && !tags.includes(tag)) {
+					addTagToPodcast(tag, selectedPodcast);
+					addTag(tag);
+				} else {
+					duplicateTags.push(tag);
+				}
 			}
 		});
 
