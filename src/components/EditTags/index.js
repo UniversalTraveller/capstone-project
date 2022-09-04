@@ -32,7 +32,7 @@ export default function EditTags({selectedPodcast}) {
 					<span>This podcast has no tags yet.</span>
 				)}
 			</TagList>
-			<p>Unused Tags:</p>
+			<p>Unused tags:</p>
 			<TagList role="list">
 				{tags
 					.filter(tag => !thePodcast.tags.includes(tag))

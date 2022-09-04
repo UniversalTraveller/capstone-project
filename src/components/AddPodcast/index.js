@@ -3,7 +3,8 @@ import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
 import loadPodcastFeed from '../../utils/loadPodcastFeed';
-import {Form, ButtonRow, Notification, NotificationArea} from '../NotificationArea/styled';
+import {Form, FormRow} from '../Form/styled';
+import {Notification, NotificationArea} from '../NotificationArea/styled';
 
 export default function AddPodcast() {
 	const router = useRouter();
@@ -47,12 +48,12 @@ export default function AddPodcast() {
 						id="feedUrl"
 						placeholder="https//podcast.com/feed.rss"
 					/>
-					<ButtonRow>
+					<FormRow>
 						<button type="submit">Submit</button>
 						<button type="button" onClick={() => router.push('/')}>
 							Cancel
 						</button>
-					</ButtonRow>
+					</FormRow>
 				</Form>
 			) : (
 				''
@@ -60,11 +61,11 @@ export default function AddPodcast() {
 			{message === 'success' ? (
 				<Notification>
 					<p>Added new Podcast: {addedPodcastTitle}</p>
-					<ButtonRow>
+					<FormRow>
 						<button type="button" onClick={() => router.push('/')}>
 							Okay, cool!
 						</button>
-					</ButtonRow>
+					</FormRow>
 				</Notification>
 			) : (
 				''
@@ -72,14 +73,14 @@ export default function AddPodcast() {
 			{message === 'error' ? (
 				<Notification>
 					<p>This didn&lsquo;t work. Please provide the URL of a proper podcast feed.</p>
-					<ButtonRow>
+					<FormRow>
 						<button type="button" onClick={() => setMessage('form')}>
 							Okay
 						</button>
 						<button typge="button" onClick={() => router.push('/')}>
 							Cancel
 						</button>
-					</ButtonRow>
+					</FormRow>
 				</Notification>
 			) : (
 				''
