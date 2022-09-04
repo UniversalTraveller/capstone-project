@@ -34,8 +34,7 @@ describe('CreateTags', () => {
 describe('CreateTags', () => {
 	it('should not create a new tag when calld with an already existing tag', async () => {
 		const store = renderHook(() => useStore());
-		const {addTagToPodcast} = store.result.current;
-		const {addTag} = store.result.current;
+		const {addTagToPodcast, addTag} = store.result.current;
 
 		const selectedPodcast = store.result.current.podcasts[0];
 
