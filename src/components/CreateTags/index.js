@@ -19,7 +19,7 @@ export default function CreateTags({selectedPodcast}) {
 		const input = event.target.elements.tags.value;
 
 		// avoid creation of empty tags
-		if (input.length === 0) {
+		if (input.trim().length === 0) {
 			return;
 		}
 

@@ -12,8 +12,7 @@ import CreateTags from './index';
 describe('CreateTags', () => {
 	it('should create a new tag', async () => {
 		const store = renderHook(() => useStore());
-		const {addTagToPodcast} = store.result.current;
-		const {addTag} = store.result.current;
+		const {addTagToPodcast, addTag} = store.result.current;
 
 		const selectedPodcast = store.result.current.podcasts[0];
 
