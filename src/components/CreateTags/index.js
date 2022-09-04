@@ -18,20 +18,19 @@ export default function CreateTags({selectedPodcast}) {
 
 		const input = event.target.elements.tags.value;
 
-		// avoid creation of empty tags
-		if (input.trim().length === 0) {
-			return;
-		}
-
 		const newTags = input.split(',').map(tag => tag.trim());
 
 		newTags.forEach(tag => {
-			// check if the tag already exists
-			if (!selectedPodcast.tags.includes(tag) && !tags.includes(tag)) {
-				addTagToPodcast(tag, selectedPodcast);
-				addTag(tag);
-			} else {
-				duplicateTags.push(tag);
+			// check for empty tags or tags that only contain spaces (wedged between commas)
+			if (tag.trim().length) {
+				// check if the tag already exists
+				if (tag.trim())
+					if (!selectedPodcast.tags.includes(tag) && !tags.includes(tag)) {
+						addTagToPodcast(tag, selectedPodcast);
+						addTag(tag);
+					} else {
+						duplicateTags.push(tag);
+					}
 			}
 		});
 
