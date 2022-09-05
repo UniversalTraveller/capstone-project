@@ -7,6 +7,7 @@ const defaultPodcast = {
 	feed: 'https://feed.syntax.fm/rss',
 	key: nanoid(),
 	tags: ['web development', 'news', 'tech'],
+	image: 'https://ssl-static.libsyn.com/p/assets/7/9/0/7/790703531a3c8eca/iTunes_Artwork.png',
 	episodes: [
 		{
 			title: 'CSS Proposals @when, CSS Masonry, Carets',

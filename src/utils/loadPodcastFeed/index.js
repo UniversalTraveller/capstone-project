@@ -36,6 +36,13 @@ export default async function loadPodcastFeed(rssUrl) {
 		feed: channel.querySelector('[rel="self"]').getAttribute('href')
 			? channel.querySelector('[rel="self"]').getAttribute('href')
 			: '',
+		image: channel.querySelector('image')
+			? channel.querySelector('image').getAttribute('href') //account for the different ways image urls are stored
+				? channel.querySelector('image').getAttribute('href')
+				: channel.querySelector('image').querySelector('url').innerHTML
+				? channel.querySelector('image').querySelector('url').innerHTML
+				: ''
+			: '',
 		key: nanoid(),
 		episodes: feedItems ? feedItems : [],
 		tags: [],
