@@ -11,8 +11,9 @@ export const PodcastHeaderTitle = styled.h2`
 `;
 
 export const PodcastHeaderParagraph = styled.p`
+	display: flex;
 	font-size: 1rem;
-	margin-bottom: 0.5rem;
+	gap: 0.6rem;
 `;
 
 export const PodcastHeaderArea = styled.article`

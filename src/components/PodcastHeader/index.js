@@ -17,10 +17,6 @@ export default function PodcastHeader() {
 	const imageUrl = `https://res.cloudinary.com/demo/image/fetch/${selectedPodcast.image}`;
 	const router = Router;
 
-	function handleEditTags() {
-		router.push('/edit-tags');
-	}
-
 	return (
 		<PodcastHeaderArea>
 			{/* insert podcast image */}
@@ -34,7 +30,12 @@ export default function PodcastHeader() {
 						{decodeHtml(selectedPodcast.author)}
 					</PodcastHeaderParagraph>
 					<PodcastHeaderParagraph>
-						<NavigationLink onClick={() => handleEditTags()}>Edit Tags</NavigationLink>
+						<NavigationLink onClick={() => router.push('/edit-tags')}>
+							Edit Tags
+						</NavigationLink>
+						<NavigationLink onClick={() => router.push('/delete-podcast')}>
+							Delete Podcast
+						</NavigationLink>
 					</PodcastHeaderParagraph>
 				</PodcastHeaderText>
 			</div>
