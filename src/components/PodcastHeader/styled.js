@@ -19,7 +19,7 @@ export const PodcastHeaderArea = styled.article`
 	flex-direction: row;
 	gap: 1rem;
 	margin-top: 1.4rem;
+	padding: 1rem 0;
 	border-top: 1px solid;
 	border-bottom: 1px solid;
-	padding: 1rem 0;
 `;
