@@ -30,11 +30,23 @@ export default function PodcastHeader() {
 						{decodeHtml(selectedPodcast.author)}
 					</PodcastHeaderParagraph>
 					<PodcastHeaderParagraph>
-						<NavigationLink onClick={() => router.push('/edit-tags')}>
+						<NavigationLink
+							onClick={() =>
+								router.push(
+									`/edit-tags/${selectedPodcast.title}?id=${selectedPodcast.key}`
+								)
+							}
+						>
 							Edit Tags
 						</NavigationLink>
-						<NavigationLink onClick={() => router.push('/delete-podcast')}>
-							Delete Podcast
+						<NavigationLink
+							onClick={() =>
+								router.push(
+									`/delete-podcast/${selectedPodcast.title}?id=${selectedPodcast.key}`
+								)
+							}
+						>
+							Delete
 						</NavigationLink>
 					</PodcastHeaderParagraph>
 				</PodcastHeaderText>

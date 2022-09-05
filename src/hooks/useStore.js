@@ -90,9 +90,9 @@ const useStore = create(set => ({
 	addPodcast: podcast => {
 		set(state => ({podcasts: [...state.podcasts, podcast]}));
 	},
-	deletePodcast: () => {
+	deletePodcast: key => {
 		set(state => ({
-			podcasts: state.podcasts.filter(podcast => podcast.key !== state.selectedPodcast.key),
+			podcasts: state.podcasts.filter(podcast => podcast.key !== key),
 		}));
 	},
 	tags: defaultTags,
