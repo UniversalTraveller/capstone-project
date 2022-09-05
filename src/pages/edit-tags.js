@@ -14,7 +14,7 @@ export default function EditTagsPage() {
 			<PodcastHeader />
 			<EditTags selectedPodcast={selectedPodcast} />
 			<CreateTags selectedPodcast={selectedPodcast} />
-			<Link href="/">
+			<Link href="/episodes">
 				<NavigationLink>Return</NavigationLink>
 			</Link>
 		</Layout>
