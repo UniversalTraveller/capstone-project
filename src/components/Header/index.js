@@ -16,9 +16,6 @@ export default function Header() {
 				<Link href="/">
 					<NavigationLink>Podcasts</NavigationLink>
 				</Link>
-				<Link href="/episodes">
-					<NavigationLink>Episodes</NavigationLink>
-				</Link>
 
 				<Link href="/add-podcast">
 					<NavigationLink>Add Podcast</NavigationLink>
