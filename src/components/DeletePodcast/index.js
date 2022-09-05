@@ -26,7 +26,11 @@ export default function DeletePodcast() {
 					<button onClick={() => handleDelete()} name="okay">
 						Okay
 					</button>
-					<button onClick={() => router.push('/')}>Cancel</button>
+					<button
+						onClick={() => router.push(`/podcast/${podcast.title}?id=${podcast.key}`)}
+					>
+						Cancel
+					</button>
 				</FormRow>
 			</Notification>
 		</NotificationArea>
