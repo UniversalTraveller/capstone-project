@@ -6,7 +6,6 @@ import {Notification, NotificationArea} from '../NotificationArea/styled';
 
 export default function DeletePodcast() {
 	const router = useRouter();
-	//const selectedPodcast = useStore(state => state.selectedPodcast);
 	const podcasts = useStore(state => state.podcasts);
 	const podcast = podcasts.find(podcast => podcast.key === router.query.id);
 	const deletePodcast = useStore(state => state.deletePodcast);

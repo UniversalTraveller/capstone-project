@@ -76,11 +76,9 @@ const defaultTags = [
 ];
 
 const useStore = create(set => ({
-	selectedPodcast: defaultPodcast,
 	episodePlaying: defaultPodcast.episodes[0],
 	selectedEpisodes: defaultPodcast.episodes,
 	podcastPlaying: defaultPodcast,
-	setSelectedPodcast: podcast => set({selectedPodcast: podcast}),
 	setEpisodePlaying: episode => set({episodePlaying: episode}),
 	setSelectedEpisodes: episodes => set({selectedEpisodes: episodes}),
 	setPodcastPlaying: podcast => set({podcastPlaying: podcast}),
