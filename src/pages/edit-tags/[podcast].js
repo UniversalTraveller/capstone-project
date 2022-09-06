@@ -11,7 +11,7 @@ export default function EditTagsPage() {
 	const router = useRouter();
 	const {id} = router.query;
 	const podcasts = useStore(state => state.podcasts);
-	const podcast = podcasts.length ? podcasts.find(podcast => podcast.key === id) : null;
+	const podcast = podcasts.find(podcast => podcast.key === id);
 	const podcastLink = podcast ? `/podcast/${podcast.title}?id=${podcast.key}` : null;
 
 	return (
