@@ -5,7 +5,7 @@ const defaultPodcast = {
 	title: 'Syntax - Tasty Web Development Treats',
 	author: 'Wes Bos & Scott Tolinski',
 	feed: 'https://feed.syntax.fm/rss',
-	key: nanoid(),
+	key: '1',
 	tags: ['web development', 'news', 'tech'],
 	image: 'https://ssl-static.libsyn.com/p/assets/7/9/0/7/790703531a3c8eca/iTunes_Artwork.png',
 	episodes: [
