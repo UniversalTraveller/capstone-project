@@ -9,7 +9,9 @@ export default function EditTags({selectedPodcast}) {
 	const tags = useStore(state => state.tags);
 
 	// necessery to refresh the page after adding a tag
-	const thePodcast = podcasts.find(podcast => podcast.key === selectedPodcast.key);
+	const thePodcast = podcasts
+		? podcasts.find(podcast => podcast.key === selectedPodcast.key)
+		: null;
 	function handleAddTag(tag) {
 		addTagToPodcast(tag, selectedPodcast);
 	}

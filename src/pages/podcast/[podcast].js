@@ -15,9 +15,7 @@ export default function Episodes() {
 			<PodcastHeader />
 
 			<TagList>
-				{podcast.tags.map(tag => (
-					<Tag key={tag}>{tag}</Tag>
-				))}
+				{podcast ? podcast.tags.map(tag => <Tag key={tag}>{tag}</Tag>) : null}
 			</TagList>
 			<DisplayEpisodes />
 		</Layout>

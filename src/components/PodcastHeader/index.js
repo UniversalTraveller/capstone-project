@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Router from 'next/router';
+import {useRouter} from 'next/router';
 
 import useStore from '../../hooks/useStore';
 import decodeHtml from '../../utils/decodeHtml';
@@ -14,7 +14,7 @@ import {
 
 export default function PodcastHeader() {
 	const podcasts = useStore(state => state.podcasts);
-	const router = Router;
+	const router = useRouter();
 	const {id} = router.query;
 	const selectedPodcast = podcasts.find(podcast => podcast.key === id);
 	const imageUrl = selectedPodcast

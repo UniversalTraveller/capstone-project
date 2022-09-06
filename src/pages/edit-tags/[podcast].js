@@ -10,17 +10,22 @@ import useStore from '../../hooks/useStore';
 export default function EditTagsPage() {
 	const router = useRouter();
 	const {id} = router.query;
-	const podcast = useStore(state => state.podcasts.find(podcast => podcast.key === id));
+	const podcasts = useStore(state => state.podcasts);
+	const podcast = podcasts.length ? podcasts.find(podcast => podcast.key === id) : null;
 	const podcastLink = podcast ? `/podcast/${podcast.title}?id=${podcast.key}` : null;
 
 	return (
 		<Layout>
-			<PodcastHeader />
-			<EditTags selectedPodcast={podcast} />
-			<CreateTags selectedPodcast={podcast} />
-			<Link href={podcastLink}>
-				<NavigationLink>Return</NavigationLink>
-			</Link>
+			{podcast ? (
+				<>
+					<PodcastHeader />
+					<EditTags selectedPodcast={podcast} />
+					<CreateTags selectedPodcast={podcast} />
+					<Link href={podcastLink}>
+						<NavigationLink>Return</NavigationLink>
+					</Link>
+				</>
+			) : null}
 		</Layout>
 	);
 }
