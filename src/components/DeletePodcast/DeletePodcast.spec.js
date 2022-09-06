@@ -15,7 +15,7 @@ jest.mock('next/router', () => ({
 }));
 
 describe('deletePodcast (WithGlobalState)', () => {
-	it('should delete a podcast', async () => {
+	it.skip('should delete a podcast', async () => {
 		const push = jest.fn();
 		useRouter.mockImplementation(() => ({
 			push,
