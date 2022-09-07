@@ -15,7 +15,8 @@ export const FormRow = styled.div`
 export const FormButton = styled.button`
 	display: flex;
 	align-items: center;
-	padding: 0.2rem 0.4rem;
+	text-align: left;
+	padding: 0.2rem 0.3rem;
 	gap: 0.3rem;
 	border: 1px solid;
 	border-radius: 0.2rem;

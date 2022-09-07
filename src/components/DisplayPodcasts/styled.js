@@ -9,8 +9,8 @@ export const PodcastCard = styled.article`
 	padding: 0.6rem;
 	border-radius: 0.6rem;
 	background-color: var(--color-secondary-light);
+	box-shadow: 0 0 30px -16px var(--color-secondary-dark);
 	color: var(--color-primary-dark);
-	box-shadow: 0 0 3rem -2rem var(--color-secondary-dark);
 	font-family: var(--font-sans);
 	font-size: 1rem;
 	text-align: left;
@@ -21,7 +21,7 @@ export const PodcastCard = styled.article`
 `;
 
 export const PodcastTitle = styled.h2`
-	font-weight: bold;
+	font-weight: 600;
 `;
 
 export const PodcastImage = styled.img`
@@ -36,6 +36,6 @@ export const PodcastTextBox = styled.div`
 export const ContentBox = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin: 1.2rem 0;
+	margin: 0.2rem 0;
 	gap: 1rem;
 `;

@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 
 export const Tag = styled.li`
-	padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+	padding: 0.3rem;
 	font-size: 0.9rem;
-
-	background-color: var(--color-secondary-dark);
-	color: var(--color-primary-light);
-	border-radius: 0.4rem;
+	border: 1px solid;
+	color: var(--color-secondary-dark);
 `;
 
 export const TagList = styled.ul`
@@ -19,9 +17,9 @@ export const TagList = styled.ul`
 `;
 
 export const MiniButton = styled.button`
-	margin-left: 0.4rem;
+	margin-left: 0.1rem;
 	padding: 0 4px;
 	border: none;
-	border-radius: 0.2rem;
 	background-color: var(--color-primary-light);
+	color: var(--color-secondary-dark);
 `;

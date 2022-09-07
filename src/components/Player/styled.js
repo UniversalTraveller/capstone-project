@@ -19,13 +19,13 @@ export const PlayerOverlay = styled.article`
 export const PlayerTitle = styled.h2`
 	display: inline;
 	font-size: 1.4rem;
-	font-weight: bold;
+	font-weight: 600;
 `;
 
 export const PlayerDate = styled.p`
 	display: inline;
 	font-size: 1.4rem;
-	font-weight: bold;
+	font-weight: 600;
 `;
 
 export const AudioPlayerBox = styled.div`

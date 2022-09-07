@@ -10,7 +10,7 @@ export const PodcastHeaderText = styled.div`
 
 export const PodcastHeaderTitle = styled.h2`
 	font-size: 1.4rem;
-	font-weight: bold;
+	font-weight: 600;
 `;
 
 export const PodcastHeaderParagraph = styled.p`
@@ -22,6 +22,6 @@ export const PodcastHeaderParagraph = styled.p`
 export const PodcastHeaderArea = styled.article`
 	display: flex;
 	flex-direction: row;
-	gap: 1rem;
-	margin-top: 1.4rem;
+	gap: 0.8rem;
+	margin-top: 0.2rem;
 `;

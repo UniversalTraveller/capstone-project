@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import {useRouter} from 'next/router';
 
 import useStore from '../../hooks/useStore';
 import decodeHtml from '../../utils/decodeHtml';
+import {PodcastImage} from '../DisplayPodcasts/styled';
 import {FormButton} from '../Form/styled';
 import Icon from '../Icons';
 
@@ -26,14 +26,13 @@ export default function PodcastHeader() {
 		<>
 			{selectedPodcast ? (
 				<PodcastHeaderArea>
-					<div>
-						<Image
-							src={imageUrl}
-							alt={selectedPodcast.title}
-							height="240px"
-							width="240px"
-						/>
-					</div>
+					<PodcastImage
+						src={imageUrl}
+						alt={selectedPodcast.title}
+						height="140px"
+						width="140px"
+					/>
+
 					<div>
 						<PodcastHeaderText>
 							<PodcastHeaderTitle>

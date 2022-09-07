@@ -119,9 +119,9 @@ main {
 
 :root {
 	--color-primary-light: #d9e5d6;
-	--color-primary-dark: #1C100A;
+	--color-primary-dark: #222;
 	--color-secondary-light: #0FA3B1;
-	--color-secondary-dark: #786257;
+	--color-secondary-dark: #222;
 	--color-contrast: #a00;
 	--font-sans: 'Finlandica', sans-serif;
 	--font-serif: 'Gentium Book Plus', serif;

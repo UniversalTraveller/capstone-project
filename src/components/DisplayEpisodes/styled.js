@@ -9,6 +9,7 @@ export const EpisodeCard = styled.article`
 	padding: 0.6rem;
 	border-radius: 0.6rem;
 	background-color: var(--color-secondary-light);
+	box-shadow: 0 0 30px -16px var(--color-secondary-dark);
 	color: var(--color-primary-dark);
 	font-family: var(--font-sans);
 	font-size: 1rem;
@@ -17,9 +18,8 @@ export const EpisodeCard = styled.article`
 	&&:hover {
 		cursor: pointer;
 	}
-	box-shadow: 0 0 3rem -1.8rem var(--color-secondary-dark);
 `;
 
 export const EpisodeTitle = styled.h2`
-	font-weight: bold;
+	font-weight: 600;
 `;
