@@ -96,33 +96,25 @@ main {
 }
 
 @font-face {
-	font-family: 'Gentium Book Plus';
-	font-style: italic;
-	font-weight: normal;
-	src: url("/fonts/GentiumBookPlus-Italic.ttf");
-
-}
-
-@font-face {
-	font-family: 'Gentium Book Plus';
+	font-family: 'Source Sans Pro';
 	font-style: normal;
-	font-weight: bold;
-	src: url("/fonts/GentiumBookPlus-Bold.ttf");
+	font-weight: 400;
+	src: url('/fonts/SourceSansPro-Regular.ttf');
 }
 
 @font-face {
-	font-family: 'Gentium Book Plus';
-	font-style: italic;
-	font-weight: bold;
-	src: url("/fonts/GentiumBookPlus-BoldItalic.ttf");
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 600;
+	src: url('/fonts/SourceSansPro-SemiBold.ttf');
 }
 
 :root {
-	--color-primary-light: #d9e5d6;
+	--color-primary-light: #f0f0f0;
 	--color-primary-dark: #222;
-	--color-secondary-light: #0FA3B1;
+	--color-secondary-light: #8FB1D6;
 	--color-secondary-dark: #222;
 	--color-contrast: #a00;
-	--font-sans: 'Finlandica', sans-serif;
+	--font-sans: 'Source Sans Pro', sans-serif;
 	--font-serif: 'Gentium Book Plus', serif;
 `;
