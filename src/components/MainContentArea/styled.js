@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
 export const MainContentArea = styled.div`
-	margin: 2rem 2rem 14rem 2rem;
+	padding: 1rem 1rem 14rem 1rem;
+	min-height: 100vh;
+	background: var(--color-primary-light);
 `;

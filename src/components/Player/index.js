@@ -4,7 +4,7 @@ import useStore from '../../hooks/useStore';
 import decodeHtml from '../../utils/decodeHtml';
 import renderDate from '../../utils/renderDate';
 
-import {PlayerOverlay, PlayerTitle, PlayerDate} from './styled';
+import {PlayerOverlay, PlayerTitle, PlayerDate, AudioPlayerBox} from './styled';
 
 export default function Player() {
 	const episodePlaying = useStore(state => state.episodePlaying);
@@ -39,12 +39,15 @@ export default function Player() {
 			</div>
 			<p>{podcastTitle ? podcastTitle : 'No title'}</p>
 			<p>{podcastAuthor ? podcastAuthor : 'No author'}</p>
-			<ReactAudioPlayer
-				controls
-				src={episodePlaying.url ? episodePlaying.url : ''}
-				onVolumeChanged={handleVolumeChange}
-				volume={playerVolume}
-			/>
+			<AudioPlayerBox>
+				<ReactAudioPlayer
+					controls
+					src={episodePlaying.url ? episodePlaying.url : ''}
+					onVolumeChanged={handleVolumeChange}
+					volume={playerVolume}
+					style={{display: 'block', width: '100%'}}
+				/>
+			</AudioPlayerBox>
 		</PlayerOverlay>
 	);
 }

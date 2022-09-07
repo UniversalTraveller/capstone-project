@@ -5,7 +5,7 @@ import convertSeconds from '../../utils/convertSeconds';
 import decodeHtml from '../../utils/decodeHtml';
 import renderDate from '../../utils/renderDate';
 
-import {EpisodeCard} from './styled';
+import {EpisodeCard, EpisodeTitle} from './styled';
 
 export default function DisplayEpisodes() {
 	const setEpisodePlaying = useStore(state => state.setEpisodePlaying);
@@ -30,7 +30,7 @@ export default function DisplayEpisodes() {
 							name={decodeHtml(episode.title)}
 							type="button"
 						>
-							<p>{decodeHtml(episode.title)}</p>
+							<EpisodeTitle>{decodeHtml(episode.title)}</EpisodeTitle>
 							<p>
 								<span>{convertSeconds(episode.length)}</span> -{' '}
 								<span>{renderDate(episode.date)}</span>

@@ -1,4 +1,5 @@
 import useStore from '../../hooks/useStore';
+import {InfoText} from '../InfoText';
 
 import {Tag, TagList, MiniButton} from './styled';
 
@@ -29,10 +30,10 @@ export default function EditTags({selectedPodcast}) {
 						</Tag>
 					))
 				) : (
-					<span>This podcast has no tags yet.</span>
+					<InfoText>This podcast has no tags yet.</InfoText>
 				)}
 			</TagList>
-			<p>Unused tags:</p>
+			<InfoText>Unused tags:</InfoText>
 			<TagList role="list">
 				{tags
 					.filter(tag => !thePodcast.tags.includes(tag))

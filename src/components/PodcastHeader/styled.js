@@ -4,10 +4,13 @@ export const PodcastHeaderText = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 0.4rem;
+	font-family: var(--font-sans);
+	color: var(--color-primary-dark);
 `;
 
 export const PodcastHeaderTitle = styled.h2`
-	font-size: 1.5rem;
+	font-size: 1.4rem;
+	font-weight: bold;
 `;
 
 export const PodcastHeaderParagraph = styled.p`
@@ -21,7 +24,4 @@ export const PodcastHeaderArea = styled.article`
 	flex-direction: row;
 	gap: 1rem;
 	margin-top: 1.4rem;
-	padding: 1rem 0;
-	border-top: 1px solid;
-	border-bottom: 1px solid;
 `;

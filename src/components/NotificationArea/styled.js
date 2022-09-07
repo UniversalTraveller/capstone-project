@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const NotificationArea = styled.div`
-	height: 10rem;
-	padding: 2rem;
-	background: #888;
+	height: 8rem;
+	padding: 1rem;
+	background: var(--color-primary-light);
+	font-family: var(--font-sans);
 `;
 
 export const Notification = styled.div`

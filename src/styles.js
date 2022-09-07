@@ -71,4 +71,58 @@ main {
 	gap: 0.8rem;
 }
 
+/* import fonts */
+
+@font-face {
+	font-family: 'Finlandica';
+	font-style: normal;
+	font-weight: normal, bold;
+	src: url("/fonts/Finlandica-VariableFont_wght.ttf");
+
+}
+
+@font-face {
+	font-family: 'Finlandica';
+	font-style: italic;
+	font-weight: normal, bold;
+	src: url("/fonts/Finlandica-Italic-VariableFont_wght.ttf");
+}
+
+@font-face {
+	font-family: 'Gentium Book Plus';
+	font-style: normal;
+	font-weight: normal;
+	src: url("/fonts/GentiumBookPlus-Regular.ttf");
+}
+
+@font-face {
+	font-family: 'Gentium Book Plus';
+	font-style: italic;
+	font-weight: normal;
+	src: url("/fonts/GentiumBookPlus-Italic.ttf");
+
+}
+
+@font-face {
+	font-family: 'Gentium Book Plus';
+	font-style: normal;
+	font-weight: bold;
+	src: url("/fonts/GentiumBookPlus-Bold.ttf");
+}
+
+@font-face {
+	font-family: 'Gentium Book Plus';
+	font-style: italic;
+	font-weight: bold;
+	src: url("/fonts/GentiumBookPlus-BoldItalic.ttf");
+}
+
+:root {
+	--color-primary-light: #d9e5d6;
+	--color-primary-dark: #1C100A;
+	--color-secondary-light: #0FA3B1;
+	--color-secondary-dark: #786257;
+	--color-contrast: #a00;
+	--font-sans: 'Finlandica', sans-serif;
+	--font-serif: 'Gentium Book Plus', serif;
 `;

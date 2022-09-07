@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
-import {Form, FormRow} from '../Form/styled';
+import {Form, FormButton, FormRow} from '../Form/styled';
 
 export default function CreateTags({selectedPodcast}) {
 	const addTagToPodcast = useStore(state => state.addTagToPodcast);
@@ -44,7 +44,7 @@ export default function CreateTags({selectedPodcast}) {
 			<FormRow>
 				<input type="text" name="tags" id="tags" placeholder="tag, tag, tag, ..." />
 
-				<button type="submit">Submit</button>
+				<FormButton type="submit">Submit</FormButton>
 			</FormRow>
 			{duplicateTags.length === 1 ? (
 				<FormRow>Didn&apos;t create existing tag: {duplicateTags}</FormRow>
