@@ -4,6 +4,7 @@ import {useState} from 'react';
 import useStore from '../../hooks/useStore';
 import loadPodcastFeed from '../../utils/loadPodcastFeed';
 import {Form, FormRow, FormButton} from '../Form/styled';
+import Icon from '../Icons';
 import {Notification, NotificationArea} from '../NotificationArea/styled';
 
 export default function AddPodcast() {
@@ -49,9 +50,13 @@ export default function AddPodcast() {
 						placeholder="https//podcast.com/feed.rss"
 					/>
 					<FormRow>
-						<FormButton type="submit">Submit</FormButton>
+						<FormButton type="submit">
+							Submit
+							<Icon variant="submit" size="20px" />{' '}
+						</FormButton>
 						<FormButton type="FormButton" onClick={() => router.push('/')}>
 							Cancel
+							<Icon variant="cancel" size="20px" />{' '}
 						</FormButton>
 					</FormRow>
 				</Form>
@@ -63,7 +68,7 @@ export default function AddPodcast() {
 					<p>Added new Podcast: {addedPodcastTitle}</p>
 					<FormRow>
 						<FormButton type="FormButton" onClick={() => router.push('/')}>
-							Okay, cool!
+							Okay, cool! <Icon variant="submit" size="20px" />
 						</FormButton>
 					</FormRow>
 				</Notification>
@@ -76,9 +81,11 @@ export default function AddPodcast() {
 					<FormRow>
 						<FormButton type="FormButton" onClick={() => setMessage('form')}>
 							Okay
+							<Icon variant="submit" size="20px" />
 						</FormButton>
 						<FormButton typge="FormButton" onClick={() => router.push('/')}>
 							Cancel
+							<Icon variant="cancel" size="20px" />
 						</FormButton>
 					</FormRow>
 				</Notification>

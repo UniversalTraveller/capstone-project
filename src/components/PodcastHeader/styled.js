@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const PodcastHeaderText = styled.div`
 	display: flex;
 	flex-direction: column;
-	gap: 0.4rem;
+	gap: 0.6rem;
 	font-family: var(--font-sans);
 	color: var(--color-primary-dark);
 `;
