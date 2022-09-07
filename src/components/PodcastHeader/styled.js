@@ -10,8 +10,10 @@ export const PodcastHeaderTitle = styled.h2`
 	font-size: 1.5rem;
 `;
 
-export const PodcastHeaderAuthor = styled.p`
+export const PodcastHeaderParagraph = styled.p`
+	display: flex;
 	font-size: 1rem;
+	gap: 0.6rem;
 `;
 
 export const PodcastHeaderArea = styled.article`

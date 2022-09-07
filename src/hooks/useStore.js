@@ -5,7 +5,7 @@ const defaultPodcast = {
 	title: 'Syntax - Tasty Web Development Treats',
 	author: 'Wes Bos & Scott Tolinski',
 	feed: 'https://feed.syntax.fm/rss',
-	key: nanoid(),
+	key: '1',
 	tags: ['web development', 'news', 'tech'],
 	image: 'https://ssl-static.libsyn.com/p/assets/7/9/0/7/790703531a3c8eca/iTunes_Artwork.png',
 	episodes: [
@@ -76,11 +76,9 @@ const defaultTags = [
 ];
 
 const useStore = create(set => ({
-	selectedPodcast: defaultPodcast,
 	episodePlaying: defaultPodcast.episodes[0],
 	selectedEpisodes: defaultPodcast.episodes,
 	podcastPlaying: defaultPodcast,
-	setSelectedPodcast: podcast => set({selectedPodcast: podcast}),
 	setEpisodePlaying: episode => set({episodePlaying: episode}),
 	setSelectedEpisodes: episodes => set({selectedEpisodes: episodes}),
 	setPodcastPlaying: podcast => set({podcastPlaying: podcast}),
@@ -90,9 +88,9 @@ const useStore = create(set => ({
 	addPodcast: podcast => {
 		set(state => ({podcasts: [...state.podcasts, podcast]}));
 	},
-	deletePodcast: () => {
+	deletePodcast: key => {
 		set(state => ({
-			podcasts: state.podcasts.filter(podcast => podcast.key !== state.selectedPodcast.key),
+			podcasts: state.podcasts.filter(podcast => podcast.key !== key),
 		}));
 	},
 	tags: defaultTags,
