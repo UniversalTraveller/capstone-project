@@ -1,9 +1,10 @@
-import Image from 'next/image';
 import {useRouter} from 'next/router';
 
 import useStore from '../../hooks/useStore';
 import decodeHtml from '../../utils/decodeHtml';
-import {NavigationLink} from '../NavigatonLink/styled';
+import {PodcastImage} from '../DisplayPodcasts/styled';
+import {FormButton} from '../Form/styled';
+import Icon from '../Icons';
 
 import {
 	PodcastHeaderTitle,
@@ -25,14 +26,13 @@ export default function PodcastHeader() {
 		<>
 			{selectedPodcast ? (
 				<PodcastHeaderArea>
-					<div>
-						<Image
-							src={imageUrl}
-							alt={selectedPodcast.title}
-							height="240px"
-							width="240px"
-						/>
-					</div>
+					<PodcastImage
+						src={imageUrl}
+						alt={selectedPodcast.title}
+						height="140px"
+						width="140px"
+					/>
+
 					<div>
 						<PodcastHeaderText>
 							<PodcastHeaderTitle>
@@ -42,24 +42,28 @@ export default function PodcastHeader() {
 								{decodeHtml(selectedPodcast.author)}
 							</PodcastHeaderParagraph>
 							<PodcastHeaderParagraph>
-								<NavigationLink
+								<FormButton
 									onClick={() =>
 										router.push(
-											`/edit-tags/${selectedPodcast.title}?id=${selectedPodcast.key}`
+											router.pathname.includes('edit-tags')
+												? `/podcast/${selectedPodcast.title}?id=${selectedPodcast.key}`
+												: `/edit-tags/${selectedPodcast.title}?id=${selectedPodcast.key}`
 										)
 									}
 								>
-									Edit Tags
-								</NavigationLink>
-								<NavigationLink
+									Edit Tags <Icon variant="edit_tags" size="20px" />
+								</FormButton>
+								<FormButton
 									onClick={() =>
 										router.push(
-											`/delete-podcast/${selectedPodcast.title}?id=${selectedPodcast.key}`
+											router.pathname.includes('delete-podcast')
+												? `/podcast/${selectedPodcast.title}?id=${selectedPodcast.key}`
+												: `/delete-podcast/${selectedPodcast.title}?id=${selectedPodcast.key}`
 										)
 									}
 								>
-									Delete
-								</NavigationLink>
+									Delete <Icon variant="delete" size="20px" />
+								</FormButton>
 							</PodcastHeaderParagraph>
 						</PodcastHeaderText>
 					</div>

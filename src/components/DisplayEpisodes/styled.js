@@ -1,21 +1,25 @@
 import styled from 'styled-components';
 
-export const EpisodeCard = styled.button`
+export const EpisodeCard = styled.article`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	width: 100%;
 	max-width: 640px;
-	margin: 0.2rem 0;
-	padding: 0.3rem;
-	border-width: 0 0 0.1rem 0;
-	border-style: solid;
-	border-color: #000;
-	background-color: #fff;
+	padding: 0.6rem;
+	border-radius: 0.6rem;
+	background-color: var(--color-primary-light);
+	box-shadow: 0 0 40px -10px var(--color-primary-light);
+	color: var(--color-blackish);
+	font-family: var(--font-sans);
+	font-size: 1rem;
 	text-align: left;
-	gap: 0.4rem;
+	gap: 0.3rem;
 	&&:hover {
-		background-color: #f5f5f5;
 		cursor: pointer;
 	}
+`;
+
+export const EpisodeTitle = styled.h2`
+	font-weight: 600;
 `;

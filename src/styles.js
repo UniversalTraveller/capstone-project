@@ -32,22 +32,26 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	margin: 0;
 	line-height: 1;
-
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote::before, blockquote::after,
 q::before, q::after {
-	content: '';
+	content: "";
 	content: none;
 }
+
 table {
 	border-spacing: 0;
 	border-collapse: collapse;
@@ -70,5 +74,36 @@ main {
 	align-items: flex-start ;
 	gap: 0.8rem;
 }
+
+/* import fonts */
+@font-face {
+	font-family: 'Gentium Book Plus';
+	font-style: normal;
+	font-weight: normal;
+	src: url("/fonts/GentiumBookPlus-Regular.ttf");
+}
+
+@font-face {
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 400;
+	src: url("/fonts/SourceSansPro-Regular.ttf");
+}
+@font-face {
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 600;
+	src: url("/fonts/SourceSansPro-SemiBold.ttf");
+}
+:root {
+	--color-primary-light:#91B4C9;
+	--color-secondary-light: #34EB7C;
+	--color-primary-dark: #1786AD;
+	--color-secondary-dark: #A7B8F5;
+	--color-contrast: #FA773A;
+	--color-whiteish: #F5F5F5;
+	--color-blackish: #111;
+	--font-sans: 'Source Sans Pro', sans-serif;
+	--font-serif: 'Gentium Book Plus', serif;}
 
 `;

@@ -3,8 +3,9 @@ import {useRouter} from 'next/router';
 
 import CreateTags from '../../components/CreateTags';
 import EditTags from '../../components/EditTags';
+import {FormButton} from '../../components/Form/styled';
+import Icon from '../../components/Icons';
 import Layout from '../../components/Layout';
-import {NavigationLink} from '../../components/NavigatonLink/styled';
 import PodcastHeader from '../../components/PodcastHeader';
 import useStore from '../../hooks/useStore';
 export default function EditTagsPage() {
@@ -22,7 +23,9 @@ export default function EditTagsPage() {
 					<EditTags selectedPodcast={podcast} />
 					<CreateTags selectedPodcast={podcast} />
 					<Link href={podcastLink}>
-						<NavigationLink>Return</NavigationLink>
+						<FormButton>
+							Return <Icon variant="return" size="20px" />
+						</FormButton>
 					</Link>
 				</>
 			) : null}

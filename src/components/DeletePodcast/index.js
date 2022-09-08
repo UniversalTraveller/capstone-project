@@ -1,7 +1,8 @@
 import {useRouter} from 'next/router';
 
 import useStore from '../../hooks/useStore';
-import {FormRow} from '../Form/styled';
+import {FormRow, FormButton} from '../Form/styled';
+import Icon from '../Icons';
 import {Notification, NotificationArea} from '../NotificationArea/styled';
 
 export default function DeletePodcast() {
@@ -22,14 +23,16 @@ export default function DeletePodcast() {
 			<Notification>
 				Do you really want to delete &quot;{podcast ? podcast.title : null}&quot;?
 				<FormRow>
-					<button onClick={() => handleDelete()} name="okay">
+					<FormButton onClick={() => handleDelete()} name="okay">
 						Okay
-					</button>
-					<button
+						<Icon variant="submit" size="20px" />
+					</FormButton>
+					<FormButton
 						onClick={() => router.push(`/podcast/${podcast.title}?id=${podcast.key}`)}
 					>
 						Cancel
-					</button>
+						<Icon variant="cancel" size="20px" />
+					</FormButton>
 				</FormRow>
 			</Notification>
 		</NotificationArea>

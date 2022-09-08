@@ -3,7 +3,8 @@ import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
 import loadPodcastFeed from '../../utils/loadPodcastFeed';
-import {Form, FormRow} from '../Form/styled';
+import {Form, FormRow, FormButton} from '../Form/styled';
+import Icon from '../Icons';
 import {Notification, NotificationArea} from '../NotificationArea/styled';
 
 export default function AddPodcast() {
@@ -49,10 +50,14 @@ export default function AddPodcast() {
 						placeholder="https//podcast.com/feed.rss"
 					/>
 					<FormRow>
-						<button type="submit">Submit</button>
-						<button type="button" onClick={() => router.push('/')}>
+						<FormButton type="submit">
+							Submit
+							<Icon variant="submit" size="20px" />{' '}
+						</FormButton>
+						<FormButton type="FormButton" onClick={() => router.push('/')}>
 							Cancel
-						</button>
+							<Icon variant="cancel" size="20px" />{' '}
+						</FormButton>
 					</FormRow>
 				</Form>
 			) : (
@@ -62,9 +67,9 @@ export default function AddPodcast() {
 				<Notification>
 					<p>Added new Podcast: {addedPodcastTitle}</p>
 					<FormRow>
-						<button type="button" onClick={() => router.push('/')}>
-							Okay, cool!
-						</button>
+						<FormButton type="FormButton" onClick={() => router.push('/')}>
+							Okay, cool! <Icon variant="submit" size="20px" />
+						</FormButton>
 					</FormRow>
 				</Notification>
 			) : (
@@ -74,12 +79,14 @@ export default function AddPodcast() {
 				<Notification>
 					<p>This didn&lsquo;t work. Please provide the URL of a proper podcast feed.</p>
 					<FormRow>
-						<button type="button" onClick={() => setMessage('form')}>
+						<FormButton type="FormButton" onClick={() => setMessage('form')}>
 							Okay
-						</button>
-						<button typge="button" onClick={() => router.push('/')}>
+							<Icon variant="submit" size="20px" />
+						</FormButton>
+						<FormButton typge="FormButton" onClick={() => router.push('/')}>
 							Cancel
-						</button>
+							<Icon variant="cancel" size="20px" />
+						</FormButton>
 					</FormRow>
 				</Notification>
 			) : (
