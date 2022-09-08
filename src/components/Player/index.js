@@ -34,7 +34,7 @@ export default function Player() {
 				<PlayerTitle>
 					{episodeTitle ? episodeTitle : 'Click on an episode to play!'}
 				</PlayerTitle>
-				<span> - </span>
+				<PlayerDate> - </PlayerDate>
 				<PlayerDate>{episodePlaying.date ? date : '00.00.0000'}</PlayerDate>
 			</div>
 			<p>{podcastTitle ? podcastTitle : 'No title'}</p>
