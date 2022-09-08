@@ -12,7 +12,6 @@ export const TagList = styled.ul`
 	list-style-type: none;
 	gap: 0.4rem;
 	color: var(--color-blackish);
-
 	font-family: var(--font-serif);
 `;
 

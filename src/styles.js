@@ -102,7 +102,7 @@ main {
 	--color-secondary-dark: #A7B8F5;
 	--color-contrast: #FA773A;
 	--color-whiteish: #F5F5F5;
-	--color-blackish: #111111;
+	--color-blackish: #111;
 	--font-sans: 'Source Sans Pro', sans-serif;
 	--font-serif: 'Gentium Book Plus', serif;}
 
