@@ -32,8 +32,9 @@ export default function DisplayEpisodes() {
 						>
 							<EpisodeTitle>{decodeHtml(episode.title)}</EpisodeTitle>
 							<p>
-								<span>{convertSeconds(episode.length)}</span> -{' '}
 								<span>{renderDate(episode.date)}</span>
+								<span> - </span>
+								<span>{convertSeconds(episode.length)}</span>
 							</p>
 						</EpisodeCard>
 				  ))
