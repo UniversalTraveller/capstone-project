@@ -25,7 +25,7 @@ export default function Header() {
 					</NavigationLink>
 				</Link>
 
-				<Link href="/add-podcast">
+				<Link href={router.pathname === '/add-podcast' ? '/' : '/add-podcast'}>
 					<NavigationLink>
 						<Icon
 							variant="add_podcast"

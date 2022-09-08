@@ -45,7 +45,9 @@ export default function PodcastHeader() {
 								<FormButton
 									onClick={() =>
 										router.push(
-											`/edit-tags/${selectedPodcast.title}?id=${selectedPodcast.key}`
+											router.pathname.includes('edit-tags')
+												? `/podcast/${selectedPodcast.title}?id=${selectedPodcast.key}`
+												: `/edit-tags/${selectedPodcast.title}?id=${selectedPodcast.key}`
 										)
 									}
 								>
@@ -54,7 +56,9 @@ export default function PodcastHeader() {
 								<FormButton
 									onClick={() =>
 										router.push(
-											`/delete-podcast/${selectedPodcast.title}?id=${selectedPodcast.key}`
+											router.pathname.includes('delete-podcast')
+												? `/podcast/${selectedPodcast.title}?id=${selectedPodcast.key}`
+												: `/delete-podcast/${selectedPodcast.title}?id=${selectedPodcast.key}`
 										)
 									}
 								>
