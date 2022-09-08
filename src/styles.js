@@ -74,21 +74,6 @@ main {
 /* import fonts */
 
 @font-face {
-	font-family: 'Finlandica';
-	font-style: normal;
-	font-weight: normal, bold;
-	src: url("/fonts/Finlandica-VariableFont_wght.ttf");
-
-}
-
-@font-face {
-	font-family: 'Finlandica';
-	font-style: italic;
-	font-weight: normal, bold;
-	src: url("/fonts/Finlandica-Italic-VariableFont_wght.ttf");
-}
-
-@font-face {
 	font-family: 'Gentium Book Plus';
 	font-style: normal;
 	font-weight: normal;
