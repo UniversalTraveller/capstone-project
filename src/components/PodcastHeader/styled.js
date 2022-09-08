@@ -4,8 +4,8 @@ export const PodcastHeaderText = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 0.6rem;
-	font-family: var(--font-sans);
 	color: var(--color-primary-dark);
+	font-family: var(--font-sans);
 `;
 
 export const PodcastHeaderTitle = styled.h2`

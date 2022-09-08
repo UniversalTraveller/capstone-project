@@ -11,9 +11,9 @@ export const PlayerOverlay = styled.article`
 	padding: 1rem;
 	gap: 0.3rem;
 	background-color: var(--color-secondary-light);
+	box-shadow: 0 0 80px -40px var(--color-primary-dark);
 	color: var(--color-primary-dark);
 	font-family: var(--font-sans);
-	box-shadow: 0 0 80px -40px var(--color-primary-dark);
 `;
 
 export const PlayerTitle = styled.h2`
@@ -30,7 +30,7 @@ export const PlayerDate = styled.p`
 
 export const AudioPlayerBox = styled.div`
 	position: absolute;
+	right: 1rem;
 	bottom: 1rem;
 	left: 1rem;
-	right: 1rem;
 `;

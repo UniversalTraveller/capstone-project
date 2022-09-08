@@ -32,22 +32,26 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	margin: 0;
 	line-height: 1;
-
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote::before, blockquote::after,
 q::before, q::after {
-	content: '';
+	content: "";
 	content: none;
 }
+
 table {
 	border-spacing: 0;
 	border-collapse: collapse;
@@ -72,7 +76,6 @@ main {
 }
 
 /* import fonts */
-
 @font-face {
 	font-family: 'Gentium Book Plus';
 	font-style: normal;
@@ -84,16 +87,14 @@ main {
 	font-family: 'Source Sans Pro';
 	font-style: normal;
 	font-weight: 400;
-	src: url('/fonts/SourceSansPro-Regular.ttf');
+	src: url("/fonts/SourceSansPro-Regular.ttf");
 }
-
 @font-face {
 	font-family: 'Source Sans Pro';
 	font-style: normal;
 	font-weight: 600;
-	src: url('/fonts/SourceSansPro-SemiBold.ttf');
+	src: url("/fonts/SourceSansPro-SemiBold.ttf");
 }
-
 :root {
 	--color-primary-light: #f0f0f0;
 	--color-primary-dark: #222;
@@ -101,5 +102,6 @@ main {
 	--color-secondary-dark: #222;
 	--color-contrast: #a00;
 	--font-sans: 'Source Sans Pro', sans-serif;
-	--font-serif: 'Gentium Book Plus', serif;
+	--font-serif: 'Gentium Book Plus', serif;}
+
 `;

@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const Tag = styled.li`
 	padding: 0.3rem;
-	font-size: 0.9rem;
 	border: 1px solid;
 	color: var(--color-secondary-dark);
+	font-size: 0.9rem;
 `;
 
 export const TagList = styled.ul`
