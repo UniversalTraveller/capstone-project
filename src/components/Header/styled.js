@@ -9,6 +9,6 @@ export const HeaderNav = styled.nav`
 	width: 100vw;
 	gap: 0.6rem;
 	padding: 0;
-	background-color: var(--color-secondary-light);
-	box-shadow: 0 0 40px -16px var(--color-secondary-dark);
+	background-color: var(--color-primary-dark);
+	box-shadow: 0 0 40px -16px var(--color-primary-dark);
 `;

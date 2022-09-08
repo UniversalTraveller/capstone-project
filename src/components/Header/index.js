@@ -18,8 +18,8 @@ export default function Header() {
 							size="2rem"
 							color={
 								router.pathname === '/'
-									? 'var(--color-primary-light)'
-									: 'var(--color-primary-dark)'
+									? 'var(--color-whiteish)'
+									: 'var(--color-blackish)'
 							}
 						/>
 					</NavigationLink>
@@ -32,8 +32,8 @@ export default function Header() {
 							size="2rem"
 							color={
 								router.pathname === '/add-podcast'
-									? 'var(--color-primary-light)'
-									: 'var(--color-primary-dark)'
+									? 'var(--color-whiteish)'
+									: 'var(--color-blackish)'
 							}
 						/>
 					</NavigationLink>

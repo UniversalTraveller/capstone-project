@@ -96,11 +96,13 @@ main {
 	src: url("/fonts/SourceSansPro-SemiBold.ttf");
 }
 :root {
-	--color-primary-light: #f0f0f0;
-	--color-primary-dark: #222;
-	--color-secondary-light: #8FB1D6;
-	--color-secondary-dark: #222;
-	--color-contrast: #a00;
+	--color-primary-light:#91B4C9;
+	--color-secondary-light: #34EB7C;
+	--color-primary-dark: #1786AD;
+	--color-secondary-dark: #A7B8F5;
+	--color-contrast: #FA773A;
+	--color-whiteish: #F5F5F5;
+	--color-blackish: #111111;
 	--font-sans: 'Source Sans Pro', sans-serif;
 	--font-serif: 'Gentium Book Plus', serif;}
 

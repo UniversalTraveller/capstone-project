@@ -30,7 +30,7 @@ const icons = {
 	},
 };
 
-export default function Icon({variant, size = '24px', color = '#000'}) {
+export default function Icon({variant, size = '24px', color = 'var(--color-whiteish)'}) {
 	return (
 		<svg style={{width: size, height: size}} viewBox="0 0 24 24" role="img">
 			<title>{icons[variant].alt}</title>

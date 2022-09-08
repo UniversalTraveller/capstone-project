@@ -10,9 +10,9 @@ export const PlayerOverlay = styled.article`
 	height: 12rem;
 	padding: 1rem;
 	gap: 0.3rem;
-	background-color: var(--color-secondary-light);
+	background-color: var(--color-primary-dark);
 	box-shadow: 0 0 80px -40px var(--color-primary-dark);
-	color: var(--color-primary-dark);
+	color: var(--color-blackish);
 	font-family: var(--font-sans);
 `;
 

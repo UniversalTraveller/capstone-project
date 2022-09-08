@@ -16,9 +16,10 @@ export const FormButton = styled.button`
 	display: flex;
 	align-items: center;
 	padding: 0.2rem 0.3rem;
-	border: 1px solid;
+	border: 0;
 	border-radius: 0.2rem;
-	background: transparent;
+	background: var(--color-contrast);
+	color: var(--color-whiteish);
 	font-family: var(--font-sans);
 	font-size: 1rem;
 	text-align: left;

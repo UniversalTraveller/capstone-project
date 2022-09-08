@@ -8,9 +8,9 @@ export const PodcastCard = styled.article`
 	max-width: 640px;
 	padding: 0.6rem;
 	border-radius: 0.6rem;
-	background-color: var(--color-secondary-light);
-	box-shadow: 0 0 30px -16px var(--color-secondary-dark);
-	color: var(--color-primary-dark);
+	background-color: var(--color-primary-light);
+	box-shadow: 0 0 30px -16px var(--color-primary-light);
+	color: var(--color-blackish);
 	font-family: var(--font-sans);
 	font-size: 1rem;
 	text-align: left;

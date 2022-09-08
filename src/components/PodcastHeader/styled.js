@@ -4,7 +4,7 @@ export const PodcastHeaderText = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 0.6rem;
-	color: var(--color-primary-dark);
+	color: var(--color-blackish);
 	font-family: var(--font-sans);
 `;
 
