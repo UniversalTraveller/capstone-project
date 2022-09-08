@@ -13,7 +13,7 @@ export default function Player() {
 	//prepare output
 	const podcastTitle = trimString(decodeHtml(podcastPlaying.title), 60);
 	const podcastAuthor = trimString(decodeHtml(podcastPlaying.author), 60);
-	const episodeTitle = trimString(decodeHtml(episodePlaying.title), 72);
+	const episodeTitle = trimString(decodeHtml(episodePlaying.title), 52);
 	const date = renderDate(episodePlaying.date);
 
 	function trimString(string, length) {
