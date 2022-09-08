@@ -9,7 +9,7 @@ export const EpisodeCard = styled.article`
 	padding: 0.6rem;
 	border-radius: 0.6rem;
 	background-color: var(--color-primary-light);
-	box-shadow: 0 0 30px -16px var(--color-primary-light);
+	box-shadow: 0 0 40px -10px var(--color-primary-light);
 	color: var(--color-blackish);
 	font-family: var(--font-sans);
 	font-size: 1rem;
