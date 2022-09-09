@@ -15,6 +15,7 @@ Default.args = {
 			author: 'Wes Bos & Scott Tolinski',
 			key: nanoid(),
 			tags: ['tech', 'web developement'],
+			image: 'https://ssl-static.libsyn.com/p/assets/7/9/0/7/790703531a3c8eca/iTunes_Artwork.png',
 		},
 	],
 };
