@@ -18,6 +18,19 @@ const story = {
 			},
 		},
 	},
+	decorators: [
+		Story => (
+			<div
+				style={{
+					display: 'flex',
+					flexDirection: 'column',
+					gap: '0.6rem',
+				}}
+			>
+				<Story />
+			</div>
+		),
+	],
 };
 
 export default story;
